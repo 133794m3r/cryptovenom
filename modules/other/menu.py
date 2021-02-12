@@ -1,6 +1,6 @@
 import os
 
-print '''
+print('''
 
 -[MENU:Other]-
 
@@ -14,9 +14,8 @@ print '''
     8) Logic Operation NOT
 
    99) Exit
-   '''
-
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+   ''')
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 if opt == '99':
 

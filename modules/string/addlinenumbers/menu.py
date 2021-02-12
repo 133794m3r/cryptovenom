@@ -23,8 +23,8 @@
 #
 
 from main import *
-pth = raw_input('\033[1;34m[=]\033[0m Infile Path: ')
-opth = raw_input('\033[1;34m[=]\033[0m Outfile Path: ')
+pth = input('\033[1;34m[=]\033[0m Infile Path: ')
+opth = input('\033[1;34m[=]\033[0m Outfile Path: ')
 
 addlinenumbers(pth,opth)
 

@@ -24,7 +24,7 @@
 
 from main import *
 
-a = raw_input('\033[1;34m[=]\033[0m A: ')
+a = input('\033[1;34m[=]\033[0m A: ')
 
 OR(a)
 

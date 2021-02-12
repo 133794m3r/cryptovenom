@@ -24,7 +24,7 @@
 
 from main import *
 
-print '''
+print('''
 
 -=[OPTIONS:Asymetric:DSA]=-
 
@@ -34,9 +34,9 @@ print '''
    
   99) Exit
 
-'''
+''')
 
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 if opt == '99':
 
@@ -45,7 +45,7 @@ if opt == '99':
 
 elif opt == '1':
 
-    bits = raw_input('\033[1;34m[=]\033[0m Key Bits: ')
+    bits = input('\033[1;34m[=]\033[0m Key Bits: ')
     
     out = genKeys(int(bits))
     
@@ -54,25 +54,23 @@ elif opt == '1':
 
 elif opt == '2':
 
-    op = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    op = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if op == 't' or op == 'T':
     
-        text = raw_input('\033[1;34m[=]\033[0m Message: ')
+        text = input('\033[1;34m[=]\033[0m Message: ')
     
     elif op == 'f' or op == 'F':
     
-        fp = raw_input('\033[1;34m[=]\033[0m File path: ')
+        fp = input('\033[1;34m[=]\033[0m File path: ')
         
         text = open(fp, 'r').read()
-    
-    
+
     else:
-    
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
         
-    k = raw_input('\033[1;34m[=]\033[0m Key File: ')
+    k = input('\033[1;34m[=]\033[0m Key File: ')
     
     key = open(k, 'r').read()
         
@@ -82,16 +80,13 @@ elif opt == '2':
 
 elif opt == '3':
 
-    op = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    op = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if op == 't' or op == 'T':
-    
-        text = raw_input('\033[1;34m[=]\033[0m Message: ')
+        text = input('\033[1;34m[=]\033[0m Message: ')
     
     elif op == 'f' or op == 'F':
-    
-        fp = raw_input('\033[1;34m[=]\033[0m File path: ')
-        
+        fp = input('\033[1;34m[=]\033[0m File path: ')
         text = open(fp, 'r').read()
     
     
@@ -100,27 +95,22 @@ elif opt == '3':
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
         
-    k = raw_input('\033[1;34m[=]\033[0m Key File: ')
+    k = input('\033[1;34m[=]\033[0m Key File: ')
     
-    sign1 = raw_input('\033[1;34m[=]\033[0m Number 1: ')
-    sign2 = raw_input('\033[1;34m[=]\033[0m Number 2: ')
+    sign1 = input('\033[1;34m[=]\033[0m Number 1: ')
+    sign2 = input('\033[1;34m[=]\033[0m Number 2: ')
     
     tps = [int(sign1), int(sign2)]
-    
     key = open(k, 'r').read()
-        
     out = verifyMsg(text, key, tps)
     
     if out:
-    
         print('\033[1;32m[+]\033[0m Valid signature!')
         
     else:
-        
         print('\033[1;31m[-]\033[0m Signature is wrong!')
 
 else:
-
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()
 

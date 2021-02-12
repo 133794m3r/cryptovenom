@@ -32,7 +32,7 @@ def stringRandom(lenght):
         out = out + random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890=)(/&%$#@!|\-+}{][+*_:;.,<>')
     return out
 
-print '''
+print('''
 
 -=[OPTIONS]=-
 
@@ -40,15 +40,14 @@ print '''
    2) Decrypt
    3) Brute Force
    
-'''
-
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+''')
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 
 if opt == '1':
 
 
-    opt2 = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if opt2 == 'f' or opt2 == 'F':
     
@@ -57,8 +56,8 @@ if opt == '1':
         
         raw = ''
         
-        infile = raw_input('\033[1;34m[=]\033[0m Input file path: ')
-        outfile = raw_input('\033[1;34m[=]\033[0m Output file path: ')
+        infile = input('\033[1;34m[=]\033[0m Input file path: ')
+        outfile = input('\033[1;34m[=]\033[0m Output file path: ')
     
     
     elif opt2 == 't' or opt2 == 'T':
@@ -68,7 +67,7 @@ if opt == '1':
         infile = ''
         outfile = ''
         
-        raw = raw_input('\033[1;34m[=]\033[0m Text: ')
+        raw = input('\033[1;34m[=]\033[0m Text: ')
     
     
     else:
@@ -77,12 +76,12 @@ if opt == '1':
         exit()
         
     
-    keyimport = raw_input('\033[1;34m[=]\033[0m Key Encoding Import (eg.: raw or base64): ')
+    keyimport = input('\033[1;34m[=]\033[0m Key Encoding Import (eg.: raw or base64): ')
     
 
-    passwd = raw_input('\033[1;34m[=]\033[0m Key: ')
+    passwd = input('\033[1;34m[=]\033[0m Key: ')
     
-    format1 = raw_input('\033[1;34m[=]\033[0m Output encoding (eg.: raw or base64): ')
+    format1 = input('\033[1;34m[=]\033[0m Output encoding (eg.: raw or base64): ')
 
     out = rc4cipher(importx, exportx, infile, outfile, 'raw', passwd, raw, keyimport, format1)
     
@@ -93,7 +92,7 @@ if opt == '1':
 elif opt == '2':
 
 
-    opt2 = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if opt2 == 'f' or opt2 == 'F':
     
@@ -102,8 +101,8 @@ elif opt == '2':
         
         raw = ''
         
-        infile = raw_input('\033[1;34m[=]\033[0m Input file path: ')
-        outfile = raw_input('\033[1;34m[=]\033[0m Output file path: ')
+        infile = input('\033[1;34m[=]\033[0m Input file path: ')
+        outfile = input('\033[1;34m[=]\033[0m Output file path: ')
     
     
     elif opt2 == 't' or opt2 == 'T':
@@ -113,7 +112,7 @@ elif opt == '2':
         infile = ''
         outfile = ''
         
-        raw = raw_input('\033[1;34m[=]\033[0m Text: ')
+        raw = input('\033[1;34m[=]\033[0m Text: ')
     
     
     else:
@@ -122,13 +121,13 @@ elif opt == '2':
         exit()
        
         
-    format1 = raw_input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
+    format1 = input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
     
     
-    keyimport = raw_input('\033[1;34m[=]\033[0m Key Encoding Import (eg.: raw or base64): ')
+    keyimport = input('\033[1;34m[=]\033[0m Key Encoding Import (eg.: raw or base64): ')
    
 
-    passwd = raw_input('\033[1;34m[=]\033[0m Key: ')
+    passwd = input('\033[1;34m[=]\033[0m Key: ')
     
     
 
@@ -142,7 +141,7 @@ elif opt == '3':
     print('NOT YET')
     exit()
 
-    opt2 = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if opt2 == 'f' or opt2 == 'F':
     
@@ -151,8 +150,8 @@ elif opt == '3':
         
         text = ''
         
-        infile = raw_input('\033[1;34m[=]\033[0m Input file path: ')
-        outfile = raw_input('\033[1;34m[=]\033[0m Output file path: ')
+        infile = input('\033[1;34m[=]\033[0m Input file path: ')
+        outfile = input('\033[1;34m[=]\033[0m Output file path: ')
     
     
     elif opt2 == 't' or opt2 == 'T':
@@ -162,7 +161,7 @@ elif opt == '3':
         infile = ''
         outfile = ''
         
-        text = raw_input('\033[1;34m[=]\033[0m Text: ')
+        text = input('\033[1;34m[=]\033[0m Text: ')
     
     
     else:
@@ -170,7 +169,7 @@ elif opt == '3':
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
         
-    dic = raw_input('\033[1;34m[=]\033[0m Dictionary path: ')
+    dic = input('\033[1;34m[=]\033[0m Dictionary path: ')
 
     bf(ct, dic) # REVISAR ESTO ----------------------------------------------------------------------------------
 

@@ -24,22 +24,21 @@
 
 from main import *
 
-print '''
+print('''
 
 -=[OPTIONS]=-
 
    1) Encode
    2) Decode
    
-'''
-
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+''')
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 
 if opt == '1':
 
 
-    opt2 = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if opt2 == 'f' or opt2 == 'F':
     
@@ -48,8 +47,8 @@ if opt == '1':
         
         text = ''
         
-        infile = raw_input('\033[1;34m[=]\033[0m Input file path: ')
-        outfile = raw_input('\033[1;34m[=]\033[0m Output file path: ')
+        infile = input('\033[1;34m[=]\033[0m Input file path: ')
+        outfile = input('\033[1;34m[=]\033[0m Output file path: ')
     
     
     elif opt2 == 't' or opt2 == 'T':
@@ -59,7 +58,7 @@ if opt == '1':
         infile = ''
         outfile = ''
         
-        text = raw_input('\033[1;34m[=]\033[0m Text: ')
+        text = input('\033[1;34m[=]\033[0m Text: ')
     
     
     else:
@@ -67,7 +66,7 @@ if opt == '1':
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
         
-    format1 = raw_input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
+    format1 = input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
     
     out = base64encode(importx, infile, outfile, format1, text, exportx)
     
@@ -78,7 +77,7 @@ if opt == '1':
 elif opt == '2':
 
 
-    opt2 = raw_input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
+    opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
     
     if opt2 == 'f' or opt2 == 'F':
     
@@ -87,8 +86,8 @@ elif opt == '2':
         
         text = ''
         
-        infile = raw_input('\033[1;34m[=]\033[0m Input file path: ')
-        outfile = raw_input('\033[1;34m[=]\033[0m Output file path: ')
+        infile = input('\033[1;34m[=]\033[0m Input file path: ')
+        outfile = input('\033[1;34m[=]\033[0m Output file path: ')
     
     
     elif opt2 == 't' or opt2 == 'T':
@@ -98,7 +97,7 @@ elif opt == '2':
         infile = ''
         outfile = ''
         
-        text = raw_input('\033[1;34m[=]\033[0m Text: ')
+        text = input('\033[1;34m[=]\033[0m Text: ')
     
     
     else:
@@ -106,7 +105,7 @@ elif opt == '2':
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
         
-    format1 = raw_input('\033[1;34m[=]\033[0m Output format (Eg.: raw or base64): ')
+    format1 = input('\033[1;34m[=]\033[0m Output format (Eg.: raw or base64): ')
     
     out = base64decode(importx, infile, outfile, format1, text, exportx)
     

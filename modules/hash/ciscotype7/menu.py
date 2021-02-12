@@ -1,17 +1,16 @@
 from main import *
 
-print '''
+print('''
 
 -=[OPTIONS]=-
 
    1) Algorithm Encrypt
    
-   '''
-   
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+   ''')   
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 
-hash1 = raw_input('\033[1;34m[=]\033[0m Hash/Text: ')
+hash1 = input('\033[1;34m[=]\033[0m Hash/Text: ')
 
 if opt == '1':
 

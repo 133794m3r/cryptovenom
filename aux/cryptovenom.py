@@ -105,19 +105,15 @@ Version: <VERSION>     << The Cryptography Swiss Army knife >>
 ------------------------------------------------------------------
 '''
 
-    banner6 = '\n' + base64.b64decode('IOKWhOKWhMK3IOKWhOKWhOKWhCAgIOKWhMK3IOKWhOKWjCDiloTiloTiloTCt+KWhOKWhOKWhOKWhOKWhCAgICAgICDilowg4paQwrfiloTiloTiloQgLiDilpAg4paEICAgICAgIOKAoiDilowg4paEIMK3LiAK4paQ4paIIOKWjOKWquKWgOKWhCDilojCt+KWkOKWiOKWquKWiOKWiOKWjOKWkOKWiCDiloTilojigKLilojiloggIOKWqiAgICAg4paq4paIwrfilojiloziloDiloQu4paAwrfigKLilojilozilpDilojilqogICAgIMK34paI4paIIOKWkOKWiOKWiOKWiOKWqgrilojilogg4paE4paE4paQ4paA4paA4paEIOKWkOKWiOKWjOKWkOKWiOKWqiDilojilojiloDCtyDilpDilogu4paqIOKWhOKWiOKWgOKWhCDilpDilojilpDilojigKLilpDiloDiloDilqriloTilpDilojilpDilpDilowg4paE4paI4paA4paEIOKWkOKWiCDilozilpDilozilpDilojCtwrilpDilojilojilojilozilpDilojigKLilojilowg4paQ4paI4paAwrcu4paQ4paI4paqwrfigKIg4paQ4paI4paMwrfilpDilojilowu4paQ4paMIOKWiOKWiOKWiCDilpDilojiloTiloTilozilojilojilpDilojilozilpDilojilowu4paQ4paM4paI4paIIOKWiOKWiOKWjOKWkOKWiOKWjArCt+KWgOKWgOKWgCAu4paAICDiloAgIOKWgCDigKIgLuKWgCAgICDiloDiloDiloAgIOKWgOKWiOKWhOKWgOKWqi4g4paAICAg4paA4paA4paAIOKWgOKWgCDilojilqog4paA4paI4paE4paA4paq4paA4paAICDilojilqriloDiloDiloAK') +'''
+    banner6 = '\n' + base64.b64decode('IOKWhOKWhMK3IOKWhOKWhOKWhCAgIOKWhMK3IOKWhOKWjCDiloTiloTiloTCt+KWhOKWhOKWhOKWhOKWhCAgICAgICDilowg4paQwrfiloTiloTiloQgLiDilpAg4paEICAgICAgIOKAoiDilowg4paEIMK3LiAK4paQ4paIIOKWjOKWquKWgOKWhCDilojCt+KWkOKWiOKWquKWiOKWiOKWjOKWkOKWiCDiloTilojigKLilojiloggIOKWqiAgICAg4paq4paIwrfilojiloziloDiloQu4paAwrfigKLilojilozilpDilojilqogICAgIMK34paI4paIIOKWkOKWiOKWiOKWiOKWqgrilojilogg4paE4paE4paQ4paA4paA4paEIOKWkOKWiOKWjOKWkOKWiOKWqiDilojilojiloDCtyDilpDilogu4paqIOKWhOKWiOKWgOKWhCDilpDilojilpDilojigKLilpDiloDiloDilqriloTilpDilojilpDilpDilowg4paE4paI4paA4paEIOKWkOKWiCDilozilpDilozilpDilojCtwrilpDilojilojilojilozilpDilojigKLilojilowg4paQ4paI4paAwrcu4paQ4paI4paqwrfigKIg4paQ4paI4paMwrfilpDilojilowu4paQ4paMIOKWiOKWiOKWiCDilpDilojiloTiloTilozilojilojilpDilojilozilpDilojilowu4paQ4paM4paI4paIIOKWiOKWiOKWjOKWkOKWiOKWjArCt+KWgOKWgOKWgCAu4paAICDiloAgIOKWgCDigKIgLuKWgCAgICDiloDiloDiloAgIOKWgOKWiOKWhOKWgOKWqi4g4paAICAg4paA4paA4paAIOKWgOKWgCDilojilqog4paA4paI4paE4paA4paq4paA4paAICDilojilqriloDiloDiloAK').decode('utf-8') +'''
 Version: <VERSION>        << The Cryptography Swiss Army knife >>
 --------------------------------------------------------------------'''
- 
-    try:
-        banners = [banner1, banner2, banner3, banner4, banner5, banner6, banner6, banner6, banner6]
-        random_number = random.randint(0, len(banners))
-    
-        print(banners[random_number].replace('<VERSION>', version))
+
+    banners = [banner1, banner2, banner3, banner4, banner5, banner6, banner6, banner6, banner6]
+    random_number = random.randint(0, len(banners)-1)
+    print(banners[random_number].replace('<VERSION>', version))
         
-    except:
-    
-        print(banner1.replace('<VERSION>', version))
+
     
 
 def menu(menu):
@@ -142,7 +138,7 @@ def menu(menu):
    99) Exit
    
 ''')
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
         
         if option == '99':
         
@@ -232,7 +228,7 @@ def menu(menu):
     
 ''')
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
         
         if option == '99':
     
@@ -297,7 +293,7 @@ def menu(menu):
     
 ''')
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -344,7 +340,7 @@ def menu(menu):
     
 ''')
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -436,7 +432,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -593,7 +589,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -795,7 +791,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -831,7 +827,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -874,7 +870,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -938,7 +934,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -979,7 +975,7 @@ def menu(menu):
     
 ''')   
 
-        option = raw_input('\033[1;34m[=]\033[0m Option: ')
+        option = input('\033[1;34m[=]\033[0m Option: ')
     
         if option == '99':
     
@@ -1097,7 +1093,7 @@ GPG:
 
 def configSetup(CONFIG_FILEPATH):
 
-    lang = raw_input('\033[1;34m[=]\033[0m Your Lang [Eg.: EN]: ')
+    lang = input('\033[1;34m[=]\033[0m Your Lang [Eg.: EN]: ')
 
     
     print('\033[1;34m[*]\033[0m Saving configuration in: ' + CONFIG_FILEPATH)
@@ -1138,7 +1134,7 @@ ret = menu('main')
 menu(ret)
     
 while True:
-    raw_input('\n\n\033[1;34m[*]\033[0m Continue to main? ')
+    input('\n\n\033[1;34m[*]\033[0m Continue to main? ')
     print('\n\n')
     ret = menu('main')
     menu(ret)

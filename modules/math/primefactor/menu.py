@@ -24,7 +24,7 @@
 
 from main import *
 
-n1 = raw_input('\033[1;34m[=]\033[0m Number: ')
+n1 = input('\033[1;34m[=]\033[0m Number: ')
 
 n2 = prime_factorize(int(n1))
 

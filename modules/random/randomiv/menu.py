@@ -24,6 +24,6 @@
 
 from main import *
 
-lenght = raw_input("\033[1;34m[=]\033[0m IV Lenght: ")
+lenght = input("\033[1;34m[=]\033[0m IV Lenght: ")
 
 randomIV(int(lenght))

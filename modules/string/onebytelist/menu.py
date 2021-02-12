@@ -24,7 +24,7 @@
 
 from main import *
 
-string = raw_input('\033[1;34m[=]\033[0m String: ')
+string = input('\033[1;34m[=]\033[0m String: ')
 
 out = onebytelst(string)
 

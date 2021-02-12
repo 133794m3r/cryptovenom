@@ -25,7 +25,7 @@
 from main import *
 from Crypto.Util.number import *
 
-print '''
+print('''
 
 -[MENU:Asymmetric:RSA]-
 
@@ -53,7 +53,7 @@ print '''
   
 '''
 
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 if opt == '99':
 
@@ -61,7 +61,7 @@ if opt == '99':
     
 elif opt == '1':
 
-    bits = raw_input('\033[1;34m[=]\033[0m Key Bits: ')
+    bits = input('\033[1;34m[=]\033[0m Key Bits: ')
     if bits == '512' or bits == '1024' or bits == '2048' or bits == '4096':
     
         keys = genKeys(bits)
@@ -78,10 +78,10 @@ elif opt == '1':
 
 elif opt == '2':
 
-    msgpath = raw_input('\033[1;34m[=]\033[0m Message path: ')
-    pubkeypath = raw_input('\033[1;34m[=]\033[0m Public Key path: ')
-    etype = raw_input('\033[1;34m[=]\033[0m Output encoding: ')
-    ctpth = raw_input('\033[1;34m[=]\033[0m Cipher-Text Outpath: ')
+    msgpath = input('\033[1;34m[=]\033[0m Message path: ')
+    pubkeypath = input('\033[1;34m[=]\033[0m Public Key path: ')
+    etype = input('\033[1;34m[=]\033[0m Output encoding: ')
+    ctpth = input('\033[1;34m[=]\033[0m Cipher-Text Outpath: ')
     
     msg = open(msgpath, 'r').read()
     pubk = open(pubkeypath, 'r').read()
@@ -94,10 +94,10 @@ elif opt == '2':
 
 elif opt == '3':
 
-    msgpath = raw_input('\033[1;34m[=]\033[0m Cipher-Text path: ')
-    privkeypath = raw_input('\033[1;34m[=]\033[0m Private Key path: ')
-    etype = raw_input('\033[1;34m[=]\033[0m Input encoding: ')
-    ctpth = raw_input('\033[1;34m[=]\033[0m Clear-Text Outpath: ')
+    msgpath = input('\033[1;34m[=]\033[0m Cipher-Text path: ')
+    privkeypath = input('\033[1;34m[=]\033[0m Private Key path: ')
+    etype = input('\033[1;34m[=]\033[0m Input encoding: ')
+    ctpth = input('\033[1;34m[=]\033[0m Clear-Text Outpath: ')
     
     msg = open(msgpath, 'r').read()
     privk = open(privkeypath, 'r').read()
@@ -110,9 +110,9 @@ elif opt == '3':
 
 elif opt == '4':
 
-    msgpath = raw_input('\033[1;34m[=]\033[0m Message path: ')
-    privkeypath = raw_input('\033[1;34m[=]\033[0m Private Key path: ')
-    ctpth = raw_input('\033[1;34m[=]\033[0m Signature Outpath: ')
+    msgpath = input('\033[1;34m[=]\033[0m Message path: ')
+    privkeypath = input('\033[1;34m[=]\033[0m Private Key path: ')
+    ctpth = input('\033[1;34m[=]\033[0m Signature Outpath: ')
     
     print '''
     
@@ -127,7 +127,7 @@ elif opt == '4':
        5) MD5
        
        '''
-    hashn = raw_input('\033[1;34m[=]\033[0m Option: ')
+    hashn = input('\033[1;34m[=]\033[0m Option: ')
     
     if hashn == '1':
     
@@ -165,10 +165,10 @@ elif opt == '4':
 
 elif opt == '5':
 
-    msgpath = raw_input('\033[1;34m[=]\033[0m Message path: ')
-    pubkeypath = raw_input('\033[1;34m[=]\033[0m Public Key path: ')
-    signpath = raw_input('\033[1;34m[=]\033[0m Signature Path: ')
-    ctpth = raw_input('\033[1;34m[=]\033[0m Verify Outpath: ')
+    msgpath = input('\033[1;34m[=]\033[0m Message path: ')
+    pubkeypath = input('\033[1;34m[=]\033[0m Public Key path: ')
+    signpath = input('\033[1;34m[=]\033[0m Signature Path: ')
+    ctpth = input('\033[1;34m[=]\033[0m Verify Outpath: ')
     
     print '''
     
@@ -182,8 +182,7 @@ elif opt == '5':
        4) SHA-1
        5) MD5
        
-       '''
-    hashn = raw_input('\033[1;34m[=]\033[0m Option: ')
+       ''')    hashn = input('\033[1;34m[=]\033[0m Option: ')
     
     if hashn == '1':
     
@@ -222,23 +221,23 @@ elif opt == '5':
 
 elif opt == '6':
 
-    pubpath = raw_input('\033[1;34m[=]\033[0m Public Key path: ')
+    pubpath = input('\033[1;34m[=]\033[0m Public Key path: ')
     pubk = open(pubpath, 'r').read()
     
     extractPub(pubk)
 
 elif opt == '7':
 
-    privpath = raw_input('\033[1;34m[=]\033[0m Private Key path: ')
+    privpath = input('\033[1;34m[=]\033[0m Private Key path: ')
     privk = open(privpath, 'r').read()
     
     extractPriv(privk)
 
 elif opt == '8':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
-    out = raw_input('\033[1;34m[=]\033[0m Public Key Outpath: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
+    out = input('\033[1;34m[=]\033[0m Public Key Outpath: ')
     
     k = embedPub(n,e)
     
@@ -248,10 +247,10 @@ elif opt == '8':
 
 elif opt == '9':
 
-    p = raw_input('\033[1;34m[=]\033[0m P Number: ')
-    q = raw_input('\033[1;34m[=]\033[0m Q Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
-    out = raw_input('\033[1;34m[=]\033[0m Private Key Outpath: ')
+    p = input('\033[1;34m[=]\033[0m P Number: ')
+    q = input('\033[1;34m[=]\033[0m Q Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
+    out = input('\033[1;34m[=]\033[0m Private Key Outpath: ')
     
     k = embedPriv(p,q,e)
     
@@ -261,8 +260,8 @@ elif opt == '9':
 
 elif opt == '10':
 
-    bits = raw_input('\033[1;34m[=]\033[0m Key Bits: ')
-    msg = raw_input('\033[1;34m[=]\033[0m Message: ')
+    bits = input('\033[1;34m[=]\033[0m Key Bits: ')
+    msg = input('\033[1;34m[=]\033[0m Message: ')
     
     if bits == '512' or bits == '1024' or bits == '2048' or bits == '4096':
 
@@ -278,10 +277,10 @@ elif opt == '10':
 
 elif opt == '11':
 
-    p = raw_input('\033[1;34m[=]\033[0m P Number: ')
-    q = raw_input('\033[1;34m[=]\033[0m Q Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
-    c = raw_input('\033[1;34m[=]\033[0m C Number: ')
+    p = input('\033[1;34m[=]\033[0m P Number: ')
+    q = input('\033[1;34m[=]\033[0m Q Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
+    c = input('\033[1;34m[=]\033[0m C Number: ')
     
     m = RSAsolverpqec(p,q,e,c)
     
@@ -291,9 +290,9 @@ elif opt == '11':
 
 elif opt == '12':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
-    d = raw_input('\033[1;34m[=]\033[0m D Number: ')
-    c = raw_input('\033[1;34m[=]\033[0m C Number: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
+    d = input('\033[1;34m[=]\033[0m D Number: ')
+    c = input('\033[1;34m[=]\033[0m C Number: ')
     
     m = RSAsolverndc(n,d,c)
     
@@ -303,9 +302,9 @@ elif opt == '12':
 
 elif opt == '13':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
-    m = raw_input('\033[1;34m[=]\033[0m M Number: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
+    m = input('\033[1;34m[=]\033[0m M Number: ')
     
     c = nemEncrypt(n,e,m)
     
@@ -313,10 +312,10 @@ elif opt == '13':
 
 elif opt == '14':
 
-    n = raw_input('\033[1;34m[=]\033[0m P Number: ')
-    p = raw_input('\033[1;34m[=]\033[0m Q Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
-    m = raw_input('\033[1;34m[=]\033[0m M Number: ')
+    n = input('\033[1;34m[=]\033[0m P Number: ')
+    p = input('\033[1;34m[=]\033[0m Q Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
+    m = input('\033[1;34m[=]\033[0m M Number: ')
     
     c = pqemEncrypt(p,q,e,m)
     
@@ -324,25 +323,25 @@ elif opt == '14':
 
 elif opt == '15':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
     out = prime_factorize(n)
     print('\033[1;32m[+]\033[0m Factorized! Result: ')
     print(out)
 
 elif opt == '16':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
-    e1 = raw_input('\033[1;34m[=]\033[0m E1 Number: ')
-    e2 = raw_input('\033[1;34m[=]\033[0m E2 Number: ')
-    c1 = raw_input('\033[1;34m[=]\033[0m C1 Number: ')
-    c2 = raw_input('\033[1;34m[=]\033[0m C2 Number: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
+    e1 = input('\033[1;34m[=]\033[0m E1 Number: ')
+    e2 = input('\033[1;34m[=]\033[0m E2 Number: ')
+    c1 = input('\033[1;34m[=]\033[0m C1 Number: ')
+    c2 = input('\033[1;34m[=]\033[0m C2 Number: ')
     
     commonModulus(n,e1,e2,c1,c2)
 
 elif opt == '17':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
     
     d = fermatAttack(n,e)
     
@@ -350,8 +349,8 @@ elif opt == '17':
 
 elif opt == '18':
 
-    n = raw_input('\033[1;34m[=]\033[0m N Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
+    n = input('\033[1;34m[=]\033[0m N Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
     
     d = wienerAttack(n,e)
     
@@ -359,13 +358,13 @@ elif opt == '18':
 
 elif opt == '19':
 
-    n0 = raw_input('\033[1;34m[=]\033[0m N0 Number: ')
-    n1 = raw_input('\033[1;34m[=]\033[0m N1 Number: ')
-    n2 = raw_input('\033[1;34m[=]\033[0m N2 Number: ')
-    e = raw_input('\033[1;34m[=]\033[0m E Number: ')
-    c0 = raw_input('\033[1;34m[=]\033[0m C0 Number: ')
-    c1 = raw_input('\033[1;34m[=]\033[0m C1 Number: ')
-    c2 = raw_input('\033[1;34m[=]\033[0m C2 Number: ')
+    n0 = input('\033[1;34m[=]\033[0m N0 Number: ')
+    n1 = input('\033[1;34m[=]\033[0m N1 Number: ')
+    n2 = input('\033[1;34m[=]\033[0m N2 Number: ')
+    e = input('\033[1;34m[=]\033[0m E Number: ')
+    c0 = input('\033[1;34m[=]\033[0m C0 Number: ')
+    c1 = input('\033[1;34m[=]\033[0m C1 Number: ')
+    c2 = input('\033[1;34m[=]\033[0m C2 Number: ')
     hastadAttack(n0, n1, n2, e, c0, c1, c2)
 
 else:

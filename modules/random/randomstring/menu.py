@@ -24,7 +24,7 @@
 
 from main import *
 
-lenght = raw_input('\033[1;34m[=]\033[0m Lenght: ')
+lenght = input('\033[1;34m[=]\033[0m Lenght: ')
 
 out = stringRandom('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890=)(/&%$#@!|\-+}{][+*_:;.,<>', int(lenght))
 

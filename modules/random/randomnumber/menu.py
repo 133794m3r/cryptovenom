@@ -24,8 +24,8 @@
 
 from main import *
 
-min1 = int(raw_input("\033[1;34m[=]\033[0m Minimum: "))
-max1 = int(raw_input("\033[1;34m[=]\033[0m Maximum: "))
+min1 = int(input("\033[1;34m[=]\033[0m Minimum: "))
+max1 = int(input("\033[1;34m[=]\033[0m Maximum: "))
 
 out = randomNumber(min1, max1)
 

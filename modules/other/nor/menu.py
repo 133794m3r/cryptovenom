@@ -24,8 +24,8 @@
 
 from main import *
 
-a = raw_input('\033[1;34m[=]\033[0m A: ')
-b = raw_input('\033[1;34m[=]\033[0m B: ')
+a = input('\033[1;34m[=]\033[0m A: ')
+b = input('\033[1;34m[=]\033[0m B: ')
 
 NOR(a, b)
 

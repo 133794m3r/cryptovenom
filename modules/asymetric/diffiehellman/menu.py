@@ -24,7 +24,7 @@
 
 from main import *
 
-print '''
+print('''
 
 -=[OPTIONS:Asymetric:DH]=-
 
@@ -35,9 +35,8 @@ print '''
    
   99) Exit
   
-'''
-
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+''')
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 if opt == '99':
 
@@ -46,10 +45,10 @@ if opt == '99':
     
 elif opt == '1':
 
-    mink = raw_input('\033[1;34m[=]\033[0m Minimum Key Value: ')
-    maxk = raw_input('\033[1;34m[=]\033[0m Maximum Key Value: ')
-    ming = raw_input('\033[1;34m[=]\033[0m Minimum g Value: ')
-    maxg = raw_input('\033[1;34m[=]\033[0m Maximum g Value: ')
+    mink = input('\033[1;34m[=]\033[0m Minimum Key Value: ')
+    maxk = input('\033[1;34m[=]\033[0m Maximum Key Value: ')
+    ming = input('\033[1;34m[=]\033[0m Minimum g Value: ')
+    maxg = input('\033[1;34m[=]\033[0m Maximum g Value: ')
     print('\033[1;34m[*]\033[0m Generating values...')
     keys = genkey(int(mink), int(maxk), int(ming), int(maxg))
     
@@ -59,9 +58,9 @@ elif opt == '1':
 
 elif opt == '2':
 
-    A = raw_input('\033[1;34m[=]\033[0m A Value: ')
-    b = raw_input('\033[1;34m[=]\033[0m b Value: ')
-    p = raw_input('\033[1;34m[=]\033[0m p Value: ')
+    A = input('\033[1;34m[=]\033[0m A Value: ')
+    b = input('\033[1;34m[=]\033[0m b Value: ')
+    p = input('\033[1;34m[=]\033[0m p Value: ')
     print('\033[1;34m[*]\033[0m Getting key...')
     k = Abp(int(A), int(b), int(p))
     
@@ -69,9 +68,9 @@ elif opt == '2':
 
 elif opt == '3':
 
-    B = raw_input('\033[1;34m[=]\033[0m B Value: ')
-    a = raw_input('\033[1;34m[=]\033[0m a Value: ')
-    p = raw_input('\033[1;34m[=]\033[0m p Value: ')
+    B = input('\033[1;34m[=]\033[0m B Value: ')
+    a = input('\033[1;34m[=]\033[0m a Value: ')
+    p = input('\033[1;34m[=]\033[0m p Value: ')
     print('\033[1;34m[*]\033[0m Getting key...')
     k = Bap(int(B), int(a), int(p))
     
@@ -79,10 +78,10 @@ elif opt == '3':
 
 elif opt == '4':
 
-    a = raw_input('\033[1;34m[=]\033[0m a Value: ')
-    b = raw_input('\033[1;34m[=]\033[0m b Value: ')
-    g = raw_input('\033[1;34m[=]\033[0m g Value: ')
-    p = raw_input('\033[1;34m[=]\033[0m p Value: ')
+    a = input('\033[1;34m[=]\033[0m a Value: ')
+    b = input('\033[1;34m[=]\033[0m b Value: ')
+    g = input('\033[1;34m[=]\033[0m g Value: ')
+    p = input('\033[1;34m[=]\033[0m p Value: ')
     print('\033[1;34m[*]\033[0m Getting key...')
     k = abgp(int(a), int(b), int(g), int(p))
     

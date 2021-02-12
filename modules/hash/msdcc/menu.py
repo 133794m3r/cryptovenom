@@ -1,7 +1,7 @@
 from main import *
 from bruteforce import *
 
-print '''
+print('''
 
 -=[OPTIONS]=-
 
@@ -9,13 +9,12 @@ print '''
    
    2) Hash Brute Force
    
-   '''
-   
-opt = raw_input('\033[1;34m[=]\033[0m Option: ')
+   ''')   
+opt = input('\033[1;34m[=]\033[0m Option: ')
 
 
-hash1 = raw_input('\033[1;34m[=]\033[0m Hash/Text: ')
-user1 = raw_input('\033[1;34m[=]\033[0m Username: ')
+hash1 = input('\033[1;34m[=]\033[0m Hash/Text: ')
+user1 = input('\033[1;34m[=]\033[0m Username: ')
 
 if opt == '1':
 
@@ -24,7 +23,7 @@ if opt == '1':
 
 elif opt == '2':
 
-    dic = raw_input('\033[1;34m[=]\033[0m Dictionary path: ')
+    dic = input('\033[1;34m[=]\033[0m Dictionary path: ')
 
     bf(hash1, user1, dic)
 

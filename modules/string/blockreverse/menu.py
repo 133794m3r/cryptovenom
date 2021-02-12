@@ -24,21 +24,21 @@
 
 from main import *
 
-method = raw_input('\033[1;34m[=]\033[0m [F]ile Or [T]ext: ')
+method = input('\033[1;34m[=]\033[0m [F]ile Or [T]ext: ')
 
 if method == 'f' or method == 'F':
 
     m = 'file'
-    inpath = raw_input('\033[1;34m[=]\033[0m Input path: ')
+    inpath = input('\033[1;34m[=]\033[0m Input path: ')
     
     string = open(inpath, 'r').read()
     
-    outpath = raw_input('\033[1;34m[=]\033[0m Output path: ')
+    outpath = input('\033[1;34m[=]\033[0m Output path: ')
 
 elif method == 't' or method == 'T':
 
     m = 'text'
-    string = raw_input('\033[1;34m[=]\033[0m Text: ')
+    string = input('\033[1;34m[=]\033[0m Text: ')
     inpath = ''
     outpath = ''
 
@@ -48,9 +48,9 @@ else:
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()
     
-delim = raw_input('\033[1;34m[=]\033[0m Delimiter: ')
+delim = input('\033[1;34m[=]\033[0m Delimiter: ')
 
-invblocks = raw_input('\033[1;34m[=]\033[0m Inverse blocks? [y/N]: ')
+invblocks = input('\033[1;34m[=]\033[0m Inverse blocks? [y/N]: ')
 
 if invblocks == 'y' or invblocks == 'Y':
 

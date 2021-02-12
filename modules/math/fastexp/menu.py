@@ -24,8 +24,8 @@
 
 from main import *
 
-n1 = raw_input('\033[1;34m[=]\033[0m Base (x): ')
-n2 = raw_input('\033[1;34m[=]\033[0m Exponent (n): ')
+n1 = input('\033[1;34m[=]\033[0m Base (x): ')
+n2 = input('\033[1;34m[=]\033[0m Exponent (n): ')
 print('\033[1;34m[*]\033[0m f(x) = x ** n')
 n3 = fast_exp(int(n1),int(n2))
 
