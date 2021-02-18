@@ -227,7 +227,7 @@ def rc4cipher(importx, exportx, expfilepath, filepath, inputformat, passwd, raw,
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex').upper()
+        output = out.hex().upper()
     
     elif outputformat == 'dec':
     

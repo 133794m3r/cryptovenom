@@ -26,7 +26,7 @@ import os
 import time
 import random
 import base64
-import commands
+import subprocess
 
 # HARDCODED CONFIG
 
@@ -237,43 +237,43 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/symetric/aes/menu.py auto')
+            os.system('python3 modules/symetric/aes/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/symetric/des/menu.py auto')
+            os.system('python3 modules/symetric/des/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/symetric/xor/menu.py auto')
+            os.system('python3 modules/symetric/xor/menu.py auto')
     
         elif option == '4':
     
-            os.system('python modules/symetric/blowfish/menu.py auto')
+            os.system('python3 modules/symetric/blowfish/menu.py auto')
     
         elif option == '5':
      
-            os.system('python modules/symetric/twofish/menu.py auto')
+            os.system('python3 modules/symetric/twofish/menu.py auto')
     
         elif option == '6':
     
-            os.system('python modules/symetric/3des/menu.py auto')
+            os.system('python3 modules/symetric/3des/menu.py auto')
     
         elif option == '7':
     
-            os.system('python modules/symetric/rc2/menu.py auto')
+            os.system('python3 modules/symetric/rc2/menu.py auto')
     
         elif option == '8':
     
-            os.system('python modules/symetric/rc4/menu.py auto')
+            os.system('python3 modules/symetric/rc4/menu.py auto')
     
         elif option == '9':
     
-            os.system('python modules/symetric/cast/menu.py auto')
+            os.system('python3 modules/symetric/cast/menu.py auto')
             
         elif option == '10':
     
-            os.system('python modules/symetric/scrypt/menu.py auto')
+            os.system('python3 modules/symetric/scrypt/menu.py auto')
     
         else:
     
@@ -302,15 +302,15 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/asymetric/rsa/menu.py auto')
+            os.system('python3 modules/asymetric/rsa/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/asymetric/diffiehellman/menu.py auto')
+            os.system('python3 modules/asymetric/diffiehellman/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/asymetric/dsa/menu.py auto')
+            os.system('python3 modules/asymetric/dsa/menu.py auto')
 
     
         else:
@@ -349,51 +349,51 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/encoding/base64/menu.py auto')
+            os.system('python3 modules/encoding/base64/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/encoding/base32/menu.py auto')
+            os.system('python3 modules/encoding/base32/menu.py auto')
      
         elif option == '3':
     
-            os.system('python modules/encoding/base16/menu.py auto')
+            os.system('python3 modules/encoding/base16/menu.py auto')
     
         elif option == '4':
     
-            os.system('python modules/encoding/base58/menu.py auto')
+            os.system('python3 modules/encoding/base58/menu.py auto')
     
         elif option == '5':
     
-            os.system('python modules/encoding/base85/menu.py auto')
+            os.system('python3 modules/encoding/base85/menu.py auto')
             
         elif option == '6':
     
-            os.system('python modules/encoding/base91/menu.py auto')
+            os.system('python3 modules/encoding/base91/menu.py auto')
     
         elif option == '7':
     
-            os.system('python modules/encoding/hexadecimal/menu.py auto')
+            os.system('python3 modules/encoding/hexadecimal/menu.py auto')
     
         elif option == '8':
     
-            os.system('python modules/encoding/binary/menu.py auto')
+            os.system('python3 modules/encoding/binary/menu.py auto')
     
         elif option == '9':
     
-            os.system('python modules/encoding/octal/menu.py auto')
+            os.system('python3 modules/encoding/octal/menu.py auto')
     
         elif option == '10':
     
-            os.system('python modules/encoding/decimal/menu.py auto')
+            os.system('python3 modules/encoding/decimal/menu.py auto')
     
         elif option == '11':
     
-            os.system('python modules/encoding/url/menu.py auto')
+            os.system('python3 modules/encoding/url/menu.py auto')
     
         elif option == '12':
     
-            os.system('python modules/encoding/rot/menu.py auto')
+            os.system('python3 modules/encoding/rot/menu.py auto')
               
         else:
     
@@ -441,95 +441,95 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/classical/caesar/menu.py auto')
+            os.system('python3 modules/classical/caesar/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/classical/vigenere/menu.py auto')
+            os.system('python3 modules/classical/vigenere/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/classical/playfair/menu.py auto')
+            os.system('python3 modules/classical/playfair/menu.py auto')
     
         elif option == '4':
     
-            os.system('python modules/classical/polybius/menu.py auto')
+            os.system('python3 modules/classical/polybius/menu.py auto')
     
         elif option == '5':
     
-            os.system('python modules/classical/morse/menu.py auto')
+            os.system('python3 modules/classical/morse/menu.py auto')
     
         elif option == '6':
     
-            os.system('python modules/classical/atbash/menu.py auto')
+            os.system('python3 modules/classical/atbash/menu.py auto')
     
         elif option == '7':
     
-            os.system('python modules/classical/baconian/menu.py auto')
+            os.system('python3 modules/classical/baconian/menu.py auto')
     
         elif option == '8':
     
-            os.system('python modules/classical/autokey/menu.py auto')
+            os.system('python3 modules/classical/autokey/menu.py auto')
     
         elif option == '9':
     
-            os.system('python modules/classical/beaufort/menu.py auto')
+            os.system('python3 modules/classical/beaufort/menu.py auto')
     
         elif option == '10':
     
-            os.system('python modules/classical/railfence/menu.py auto')
+            os.system('python3 modules/classical/railfence/menu.py auto')
       
         elif option == '11':
      
-            os.system('python modules/classical/substitution/menu.py auto')
+            os.system('python3 modules/classical/substitution/menu.py auto')
         
         elif option == '12':
     
-            os.system('python modules/classical/coltrans/menu.py auto')
+            os.system('python3 modules/classical/coltrans/menu.py auto')
     
         elif option == '13':
     
-            os.system('python modules/classical/bifid/menu.py auto')
+            os.system('python3 modules/classical/bifid/menu.py auto')
     
         elif option == '14':
     
-            os.system('python modules/classical/foursquare/menu.py auto')
+            os.system('python3 modules/classical/foursquare/menu.py auto')
       
         elif option == '15':
     
-           os.system('python modules/classical/fractionatedmorse/menu.py auto')
+           os.system('python3 modules/classical/fractionatedmorse/menu.py auto')
     
         elif option == '16':
     
-            os.system('python modules/classical/enigma/menu.py auto')
+            os.system('python3 modules/classical/enigma/menu.py auto')
     
         elif option == '17':
     
-            os.system('python modules/classical/gronsfeld/menu.py auto')
+            os.system('python3 modules/classical/gronsfeld/menu.py auto')
     
         elif option == '18':
     
-            os.system('python modules/classical/porta/menu.py auto')
+            os.system('python3 modules/classical/porta/menu.py auto')
     
         elif option == '19':
     
-            os.system('python modules/classical/runningkey/menu.py auto')
+            os.system('python3 modules/classical/runningkey/menu.py auto')
 
         elif option == '20':
     
-            os.system('python modules/classical/adfgvx/menu.py auto')
+            os.system('python3 modules/classical/adfgvx/menu.py auto')
             
         elif option == '21':
     
-            os.system('python modules/classical/adfgx/menu.py auto')
+            os.system('python3 modules/classical/adfgx/menu.py auto')
 
         elif option == '22':
     
-            os.system('python modules/classical/affine/menu.py auto')
+            os.system('python3 modules/classical/affine/menu.py auto')
 
         elif option == '23':
     
-            os.system('python modules/classical/vernam/menu.py auto')
+            os.system('python3 modules/classical/vernam/menu.py auto')
         
         else:
     
@@ -598,181 +598,181 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/hash/md5/menu.py auto')
+            os.system('python3 modules/hash/md5/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/hash/sha1/menu.py auto')
+            os.system('python3 modules/hash/sha1/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/hash/sha224/menu.py auto')
+            os.system('python3 modules/hash/sha224/menu.py auto')
     
         elif option == '4':
     
-            os.system('python modules/hash/sha256/menu.py auto')
+            os.system('python3 modules/hash/sha256/menu.py auto')
     
         elif option == '5':
     
-            os.system('python modules/hash/sha384/menu.py auto')
+            os.system('python3 modules/hash/sha384/menu.py auto')
     
         elif option == '6':
     
-            os.system('python modules/hash/sha512/menu.py auto')
+            os.system('python3 modules/hash/sha512/menu.py auto')
     
         elif option == '7':
     
-            os.system('python modules/hash/md2/menu.py auto')
+            os.system('python3 modules/hash/md2/menu.py auto')
      
         elif option == '8':
     
-            os.system('python modules/hash/md4/menu.py auto')
+            os.system('python3 modules/hash/md4/menu.py auto')
     
         elif option == '9':
     
-            os.system('python modules/hash/argon2/menu.py auto')
+            os.system('python3 modules/hash/argon2/menu.py auto')
     
         elif option == '10':
     
-            os.system('python modules/hash/bcrypt/menu.py auto')
+            os.system('python3 modules/hash/bcrypt/menu.py auto')
     
         elif option == '11':
     
-            os.system('python modules/hash/bigcryptunix/menu.py auto')
+            os.system('python3 modules/hash/bigcryptunix/menu.py auto')
     
         elif option == '12':
     
-            os.system('python modules/hash/blake2b/menu.py auto')
+            os.system('python3 modules/hash/blake2b/menu.py auto')
         
         elif option == '13':
     
-            os.system('python modules/hash/blake2s/menu.py auto')
+            os.system('python3 modules/hash/blake2s/menu.py auto')
     
         elif option == '14':
     
-            os.system('python modules/hash/bsdicryptunix/menu.py auto')
+            os.system('python3 modules/hash/bsdicryptunix/menu.py auto')
     
         elif option == '15':
     
-            os.system('python modules/hash/ciscoasa/menu.py auto')
+            os.system('python3 modules/hash/ciscoasa/menu.py auto')
     
         elif option == '16':
     
-            os.system('python modules/hash/ciscopix/menu.py auto')    
+            os.system('python3 modules/hash/ciscopix/menu.py auto')
 
         elif option == '17':
     
-            os.system('python modules/hash/ciscotype7/menu.py auto')
+            os.system('python3 modules/hash/ciscotype7/menu.py auto')
     
         elif option == '18':
     
-            os.system('python modules/hash/crypt16unix/menu.py auto')
+            os.system('python3 modules/hash/crypt16unix/menu.py auto')
     
         elif option == '19':
     
-            os.system('python modules/hash/descryptunix/menu.py auto')
+            os.system('python3 modules/hash/descryptunix/menu.py auto')
      
         elif option == '20':
     
-            os.system('python modules/hash/freebsdunix/menu.py auto')
+            os.system('python3 modules/hash/freebsdunix/menu.py auto')
     
         elif option == '21':
     
-            os.system('python modules/hash/hmac/menu.py auto')
+            os.system('python3 modules/hash/hmac/menu.py auto')
     
         elif option == '22':
     
-            os.system('python modules/hash/ldapmd5/menu.py auto')
+            os.system('python3 modules/hash/ldapmd5/menu.py auto')
     
         elif option == '23':
     
-            os.system('python modules/hash/ldapsaltedmd5/menu.py auto')
+            os.system('python3 modules/hash/ldapsaltedmd5/menu.py auto')
     
         elif option == '24':
     
-            os.system('python modules/hash/ldapsha1/menu.py auto')
+            os.system('python3 modules/hash/ldapsha1/menu.py auto')
         
         elif option == '25':
     
-            os.system('python modules/hash/ldapsaltedsha1/menu.py auto')
+            os.system('python3 modules/hash/ldapsaltedsha1/menu.py auto')
     
         elif option == '26':
     
-            os.system('python modules/hash/lmhash/menu.py auto')
+            os.system('python3 modules/hash/lmhash/menu.py auto')
     
         elif option == '27':
     
-            os.system('python modules/hash/md5unix/menu.py auto')
+            os.system('python3 modules/hash/md5unix/menu.py auto')
     
         elif option == '28':
     
-            os.system('python modules/hash/msdcc/menu.py auto')    
+            os.system('python3 modules/hash/msdcc/menu.py auto')
             
         elif option == '29':
     
-            os.system('python modules/hash/msdcc2/menu.py auto')
+            os.system('python3 modules/hash/msdcc2/menu.py auto')
         
         elif option == '30':
     
-            os.system('python modules/hash/mssql2000/menu.py auto')
+            os.system('python3 modules/hash/mssql2000/menu.py auto')
     
         elif option == '31':
     
-            os.system('python modules/hash/mssql2005/menu.py auto')
+            os.system('python3 modules/hash/mssql2005/menu.py auto')
     
         elif option == '32':
     
-            os.system('python modules/hash/mysql41/menu.py auto')
+            os.system('python3 modules/hash/mysql41/menu.py auto')
     
         elif option == '33':
     
-            os.system('python modules/hash/mysql323/menu.py auto')   
+            os.system('python3 modules/hash/mysql323/menu.py auto')
             
 
         elif option == '34':
     
-            os.system('python modules/hash/nthash/menu.py auto')    
+            os.system('python3 modules/hash/nthash/menu.py auto')
             
         elif option == '35':
     
-            os.system('python modules/hash/ntlm/menu.py auto')
+            os.system('python3 modules/hash/ntlm/menu.py auto')
         
         elif option == '36':
     
-            os.system('python modules/hash/oracle10/menu.py auto')
+            os.system('python3 modules/hash/oracle10/menu.py auto')
     
         elif option == '37':
     
-            os.system('python modules/hash/oracle11/menu.py auto')
+            os.system('python3 modules/hash/oracle11/menu.py auto')
     
         elif option == '38':
     
-            os.system('python modules/hash/phpass/menu.py auto')
+            os.system('python3 modules/hash/phpass/menu.py auto')
     
         elif option == '39':
     
-            os.system('python modules/hash/postgresmd5/menu.py auto')   
+            os.system('python3 modules/hash/postgresmd5/menu.py auto')
             
 
         elif option == '40':
     
-            os.system('python modules/hash/ripemd/menu.py auto')
+            os.system('python3 modules/hash/ripemd/menu.py auto')
         
         elif option == '41':
     
-            os.system('python modules/hash/scrypt/menu.py auto')
+            os.system('python3 modules/hash/scrypt/menu.py auto')
     
         elif option == '42':
     
-            os.system('python modules/hash/sha256unix/menu.py auto')
+            os.system('python3 modules/hash/sha256unix/menu.py auto')
     
         elif option == '43':
     
-            os.system('python modules/hash/sha512unix/menu.py auto')
+            os.system('python3 modules/hash/sha512unix/menu.py auto')
     
         elif option == '44':
     
-            os.system('python modules/hash/sunmd5unix/menu.py auto')   
+            os.system('python3 modules/hash/sunmd5unix/menu.py auto')
         
         else:
     
@@ -800,15 +800,15 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/math/exteuc/menu.py auto')
+            os.system('python3 modules/math/exteuc/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/math/fastexp/menu.py auto')
+            os.system('python3 modules/math/fastexp/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/math/primefactor/menu.py auto')
+            os.system('python3 modules/math/primefactor/menu.py auto')
         
         else:
     
@@ -836,15 +836,15 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/identifiers/encoding/menu.py auto')
+            os.system('python3 modules/identifiers/encoding/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/identifiers/hash/menu.py auto')
+            os.system('python3 modules/identifiers/hash/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/identifiers/lang/menu.py auto')
+            os.system('python3 modules/identifiers/lang/menu.py auto')
         
         else:
     
@@ -879,43 +879,43 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/string/upper/menu.py auto')
+            os.system('python3 modules/string/upper/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/string/lower/menu.py auto')
+            os.system('python3 modules/string/lower/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/string/reverse/menu.py auto')
+            os.system('python3 modules/string/reverse/menu.py auto')
     
         elif option == '4':
     
-            os.system('python modules/string/blockreverse/menu.py auto')
+            os.system('python3 modules/string/blockreverse/menu.py auto')
     
         elif option == '5':
     
-            os.system('python modules/string/removespaces/menu.py auto')
+            os.system('python3 modules/string/removespaces/menu.py auto')
     
         elif option == '6':
     
-            os.system('python modules/string/removeenters/menu.py auto')
+            os.system('python3 modules/string/removeenters/menu.py auto')
     
         elif option == '7':
     
-            os.system('python modules/string/reversecase/menu.py auto')
+            os.system('python3 modules/string/reversecase/menu.py auto')
     
         elif option == '8':
     
-            os.system('python modules/string/onebytelist/menu.py auto')
+            os.system('python3 modules/string/onebytelist/menu.py auto')
     
         elif option == '9':
     
-            os.system('python modules/string/addlinenumbers/menu.py auto')
+            os.system('python3 modules/string/addlinenumbers/menu.py auto')
     
         elif option == '10':
     
-            os.system('python modules/string/replace/menu.py auto')
+            os.system('python3 modules/string/replace/menu.py auto')
         
         else:
     
@@ -943,15 +943,15 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/random/randomstring/menu.py auto')
+            os.system('python3 modules/random/randomstring/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/random/randomnumber/menu.py auto')
+            os.system('python3 modules/random/randomnumber/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/random/randomiv/menu.py auto')
+            os.system('python3 modules/random/randomiv/menu.py auto')
         
         else:
     
@@ -984,35 +984,35 @@ def menu(menu):
     
         elif option == '1':
     
-            os.system('python modules/other/pgp/menu.py auto')
+            os.system('python3 modules/other/pgp/menu.py auto')
     
         elif option == '2':
     
-            os.system('python modules/other/xor/menu.py auto')
+            os.system('python3 modules/other/xor/menu.py auto')
     
         elif option == '3':
     
-            os.system('python modules/other/xnor/menu.py auto')
+            os.system('python3 modules/other/xnor/menu.py auto')
     
         elif option == '4':
     
-            os.system('python modules/other/and/menu.py auto')
+            os.system('python3 modules/other/and/menu.py auto')
     
         elif option == '5':
     
-            os.system('python modules/other/nand/menu.py auto')
+            os.system('python3 modules/other/nand/menu.py auto')
     
         elif option == '6':
     
-            os.system('python modules/other/or/menu.py auto')
+            os.system('python3 modules/other/or/menu.py auto')
     
         elif option == '7':
     
-            os.system('python modules/other/nor/menu.py auto')
+            os.system('python3 modules/other/nor/menu.py auto')
     
         elif option == '8':
     
-            os.system('python modules/other/not/menu.py auto')    
+            os.system('python3 modules/other/not/menu.py auto')
         
         else:
     

@@ -197,7 +197,7 @@ def xorcipher(importx, impfilepath, raw, keyimport, passwd, export, outfilepath,
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

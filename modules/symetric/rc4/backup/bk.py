@@ -153,7 +153,7 @@ def encryptRc4(importx, impfilepath, export, filepath, outputformat, raw, passwd
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

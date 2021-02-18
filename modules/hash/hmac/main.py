@@ -191,7 +191,7 @@ def hmacx(outputformat, importx, inputformat, raw, infilepath, outfilepath, pass
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

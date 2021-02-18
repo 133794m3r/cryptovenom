@@ -157,7 +157,7 @@ def scryptx(outputformat, importx, inputformat, raw, infilepath, outfilepath, sa
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

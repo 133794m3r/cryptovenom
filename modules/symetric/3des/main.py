@@ -208,7 +208,7 @@ def encryptDes3(destype, importx, impfilepath, export, filepath, outputformat, i
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

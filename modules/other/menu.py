@@ -23,35 +23,35 @@ if opt == '99':
    
 elif opt == '1':
 
-    os.system('python pgp/menu.py')
+    os.system('python3 pgp/menu.py')
 
 elif opt == '2':
 
-    os.system('python xor/menu.py')
+    os.system('python3 xor/menu.py')
 
 elif opt == '3':
 
-    os.system('python xnor/menu.py')
+    os.system('python3 xnor/menu.py')
 
 elif opt == '4':
 
-    os.system('python and/menu.py')
+    os.system('python3 and/menu.py')
 
 elif opt == '5':
 
-    os.system('python nand/menu.py')
+    os.system('python3 nand/menu.py')
 
 elif opt == '6':
 
-    os.system('python or/menu.py')
+    os.system('python3 or/menu.py')
 
 elif opt == '7':
 
-    os.system('python nor/menu.py')
+    os.system('python3 nor/menu.py')
 
 elif opt == '8':
 
-    os.system('python not/menu.py')
+    os.system('python3 not/menu.py')
 
 else:
 

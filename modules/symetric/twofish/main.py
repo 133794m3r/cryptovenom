@@ -198,7 +198,7 @@ def encrypttwofish(importx, filepath, export, expfilepath, inputformat, passwd, 
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     
@@ -376,7 +376,7 @@ def decrypttwofish(importx, filepath, export, expfilepath, inputformat, passwd, 
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

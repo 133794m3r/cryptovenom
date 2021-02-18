@@ -18,6 +18,7 @@ hash1 = input('\033[1;34m[=]\033[0m Hash/Text: ')
 
 if opt == '1':
     f0rmat = input('\033[1;34m[=]\033[0m Output format (Eg.: hex): ')
+    hash1 = hash1.encode('utf-8')
     h = md5(f0rmat, 'print', 'raw', hash1, '', '')
     print('\033[1;32m[+]\033[0m h(x) = ' + h)
 

@@ -28,6 +28,6 @@ def randomIV(byteslen):
 
     out = Random.new().read(byteslen)
     
-    print('\033[1;32m[+]\033[0m Output (Hex) = ' + out.encode('hex'))
+    print('\033[1;32m[+]\033[0m Output (Hex) = ' + out.hex())
     
 

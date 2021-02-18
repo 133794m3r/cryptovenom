@@ -197,7 +197,7 @@ def encryptscrypt(importx, impfilepath, export, outfilepath, raw, keyimport, pas
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     
@@ -380,7 +380,7 @@ def decryptscrypt(importx, impfilepath, export, outfilepath, raw, keyimport, pas
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

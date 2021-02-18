@@ -145,7 +145,7 @@ def sha224(outputformat, importx, inputformat, raw, infilepath, outfilepath):
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

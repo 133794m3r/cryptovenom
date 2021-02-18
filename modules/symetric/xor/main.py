@@ -192,7 +192,7 @@ def encryptxor(importx, filepath, export, expfilepath, inputformat, passwd, raw,
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     
@@ -368,7 +368,7 @@ def decryptxor(importx, filepath, export, expfilepath, inputformat, passwd, raw,
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

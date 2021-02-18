@@ -213,7 +213,7 @@ def encryptRc2(rc2type, importx, impfilepath, export, filepath, outputformat, iv
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     

@@ -216,7 +216,7 @@ def encryptCast(casttype, importx, impfilepath, export, filepath, outputformat, 
     
     elif outputformat == 'hex':
     
-        output = out.encode('hex')
+        output = out.hex()
     
     elif outputformat == 'dec':
     
