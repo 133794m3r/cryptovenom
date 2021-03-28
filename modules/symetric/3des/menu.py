@@ -79,7 +79,7 @@ if opt == '1':
     type1 = input('\033[1;34m[=]\033[0m Encryption Type (eg.: ebc): ')
         
     
-    print '''
+    print('''
     
 -=[OPTIONS]=-
     
@@ -166,7 +166,7 @@ elif opt == '2':
         
     format1 = input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
     
-    print '''
+    print('''
     
 -=[OPTIONS]=-
     

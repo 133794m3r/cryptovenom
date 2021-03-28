@@ -40,7 +40,7 @@ print('''
    2) Decrypt
    3) Brute Force
    
-'''
+''')
 
 opt = input('\033[1;34m[=]\033[0m Option: ')
 
@@ -79,7 +79,7 @@ if opt == '1':
     type1 = input('\033[1;34m[=]\033[0m Encryption Type (eg.: ebc): ')
         
     
-    print '''
+    print('''
     
 -=[OPTIONS]=-
     
@@ -88,7 +88,7 @@ if opt == '1':
    3) Custom IV
    4) No IV
    
-   '''
+   ''')
     
     ivtype = input('\033[1;34m[=]\033[0m Option: ')
     
@@ -120,14 +120,14 @@ if opt == '1':
     
     keyimport = input('\033[1;34m[=]\033[0m Key Encoding Import (eg.: raw or base64): ')
     
-    print '''
+    print('''
     
 -=[OPTIONS]=-
 
    1) Raw Key
    2) SHA-256 Key
    3) MD5 Key
-   '''
+   ''')
    
     keytype = input('\033[1;34m[=]\033[0m Option: ')
     
@@ -196,7 +196,7 @@ elif opt == '2':
         
     format1 = input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
     
-    print '''
+    print('''
     
 -=[OPTIONS]=-
     
@@ -238,7 +238,7 @@ elif opt == '2':
     keyimport = input('\033[1;34m[=]\033[0m Key Encoding Import (eg.: raw or base64): ')
 
 
-    print '''
+    print('''
     
 -=[OPTIONS]=-
 

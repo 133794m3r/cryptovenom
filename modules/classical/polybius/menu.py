@@ -70,7 +70,7 @@ if opt == '1':
     
     key = input('\033[1;34m[=]\033[0m Key: ')
     
-    out = polybiusencode(importx, infile, outfile, format1,  exportx, text, key, 5, None)
+    out = polybiusencode(importx, infile, outfile, format1, exportx, text, key)
     
     print('\033[1;32m[+]\033[0m Out = ' + str(out))
     print('\033[1;32m[+]\033[0m All done!')
@@ -110,7 +110,7 @@ elif opt == '2':
     format1 = input('\033[1;34m[=]\033[0m Output format (Eg.: raw or base64): ')
     key = input('\033[1;34m[=]\033[0m Key: ')
     
-    out = polybiusdecode(importx, infile, outfile, format1, exportx, text, key, 5, None)
+    out = polybiusdecode(importx, infile, outfile, format1, exportx, text, key)
     
     print('\033[1;32m[+]\033[0m Out = ' + str(out))
     print('\033[1;32m[+]\033[0m All done!')

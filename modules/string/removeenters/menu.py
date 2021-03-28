@@ -48,7 +48,7 @@ else:
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()
     
-out = removeenters(m, inpath, outpath, string, '\n', '')
+out = removeenters(m, inpath, outpath, string)
 
 print('\033[1;32m[+]\033[0m Out = ' + str(out))
 

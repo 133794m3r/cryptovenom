@@ -23,11 +23,10 @@
 #
 
 import base64
+from urllib.parse import quote, unquote
+
 import base58
 import binascii
-     
-from urllib2 import *
-
 
 
 def text_to_bits(text, encoding='utf-8'):

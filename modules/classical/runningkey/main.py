@@ -93,6 +93,7 @@ def runningkey2(txt, key, encode):
         output += runningkey(i, key, encode)
         output += " "
     print(output)
+    return output
      
 
 def runningkeyencode(importx, infilepath, outfilepath, inputformat, exportx, key, raw):

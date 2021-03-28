@@ -64,7 +64,7 @@ def AutokeyCracker(ctext, q1gram, t1gram):
 
         next_rec = nbest(N)
         for i in range(0,KLEN-3):
-            for k in xrange(N):
+            for k in range(N):
                 for c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
                     key = rec[k][1] + c
                     fullkey = key + 'A'*(KLEN-len(key))

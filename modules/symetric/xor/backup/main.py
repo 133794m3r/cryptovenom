@@ -52,7 +52,7 @@ def int2bytes(i):
 
 def xor(raw, key):
     
-    xored = ''.join(chr(ord(x) ^ ord(y)) for (x,y) in izip(data, cycle(key)))
+    xored = ''.join(chr(ord(x) ^ ord(y)) for (x,y) in izip(raw, cycle(key)))
     return xored
         
 
@@ -197,7 +197,7 @@ def xorcipher(importx, impfilepath, raw, keyimport, passwd, export, outfilepath,
     
     elif outputformat == 'hex':
     
-        output = out.hex()
+        output = out.encode('hex')
     
     elif outputformat == 'dec':
     

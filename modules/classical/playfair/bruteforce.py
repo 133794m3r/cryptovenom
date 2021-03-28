@@ -31,7 +31,7 @@ def PlayfairBF(ctext, dictionary):
     
     for i in keys:
         try:
-            out = Plaifair(key=i[:-1]).decipher(ctext)
+            out = Playfair(key=i[:-1]).decipher(ctext)
             print('\033[1;34m[*]\033[0m Key = ' + i[:-1] + ' ; Out = ' + out)     
         except:
             print('\033[1;34m[*]\033[0m Key = ' + i[:-1] + ' ; Err.: KeyError')

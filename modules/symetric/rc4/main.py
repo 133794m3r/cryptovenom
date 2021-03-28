@@ -74,7 +74,7 @@ def rc4(key, data):
         version = 2
 
         if version == 2:
-            out.append(unichr(ord(char) ^ S[(S[j] + S[y]) % 256]))
+            out.append(chr(ord(char) ^ S[(S[j] + S[y]) % 256]))
 
         if version == 3:
             out.append(chr(ord(char) ^ S[(S[j] + S[y]) % 256]))
@@ -82,7 +82,7 @@ def rc4(key, data):
     return ''.join(out)
         
 
-def rc4cipher(importx, exportx, expfilepath, filepath, inputformat, passwd, raw, keyimport, outputformat):
+def rc4cipher(importx, exportx, impfilepath, expfilepath, inputformat, passwd, raw, keyimport, outputformat):
 
     # REMEMBER!: THERE IS NO RC4ENCRYPT() AND RC4DECRYPT() FUNCTIONS CAUSE IS THE SAME:
         # ENCRYPT: ciphertext = rc4(key, cleartext)
@@ -253,7 +253,7 @@ def rc4cipher(importx, exportx, expfilepath, filepath, inputformat, passwd, raw,
 
     if exportx == 'file':
     
-        f = open(outfilepath, 'w')
+        f = open(expfilepath, 'w')
         f.write(output)
         f.close()
         return True

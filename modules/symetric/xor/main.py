@@ -50,7 +50,7 @@ def int2bytes(i):
     
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
 
-def encryptxor(importx, filepath, export, expfilepath, inputformat, passwd, raw, keyimport, outputformat):
+def encryptxor(importx, filepath, impfilepath, expfilepath, inputformat, passwd, raw, keyimport, outputformat):
 
     if keyimport == 'base64':
     
@@ -214,7 +214,7 @@ def encryptxor(importx, filepath, export, expfilepath, inputformat, passwd, raw,
 
     if export == 'file':
     
-        f = open(outfilepath, 'w')
+        f = open(expfilepath, 'w')
         f.write(output)
         f.close()
         return True
@@ -230,7 +230,7 @@ def encryptxor(importx, filepath, export, expfilepath, inputformat, passwd, raw,
         
         
         
-def decryptxor(importx, filepath, export, expfilepath, inputformat, passwd, raw, keyimport, outputformat):
+def decryptxor(importx, filepath, impfilepath, expfilepath, inputformat, passwd, raw, keyimport, outputformat):
 
     if keyimport == 'base64':
     

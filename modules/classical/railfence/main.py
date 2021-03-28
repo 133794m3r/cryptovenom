@@ -29,7 +29,7 @@ import binascii
   
 def printFence(fence):
     for rail in range(len(fence)):
-        print ''.join(fence[rail])
+        print(''.join(fence[rail]))
     
 def encryptFence(plain, rails, offset=0, debug=False):
     cipher = ''
@@ -74,7 +74,7 @@ def decryptFence(cipher, rails, offset=0, debug=False):
     for rail in range(rails):
         p = (rail != (rails-1))
         x = rail
-        while (x < length and i < length):
+        while x < length and i < length:
             fence[rail][x] = cipher[i]
             if p:
                 x += 2*(rails - rail - 1)
@@ -182,7 +182,7 @@ def railfenceencode(importx, infilepath, outfilepath, inputformat, exportx, raw,
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
         
-    output = encryptFence(iput, rails, offset=offset, debug=False)
+    output = encryptFence(iput, rails, offset=offset)
 
     if exportx == 'file':
     
@@ -219,7 +219,7 @@ def railfencedecode(importx, infilepath, outfilepath, outputformat, exportx, raw
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
         
-    out = decryptFence(raw, rails, offset=offset, debug=False)
+    out = decryptFence(raw, rails, offset=offset)
     
     if outputformat == 'base64':
     
