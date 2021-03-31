@@ -67,12 +67,15 @@ def bcryptc(outputformat, importx, inputformat, raw, infilepath, outfilepath, sa
         iput = base58.b58decode(inp)
     elif inputformat == 'base85':
         print('\033[1;31m[-]\033[0m Option not available yet')
+        return False
     elif inputformat == 'hex':
         iput = inp.decode('hex')
     elif inputformat == 'dec':
         print('\033[1;31m[-]\033[0m Option not available yet')
+        return False
     elif inputformat == 'octal':
         print('\033[1;31m[-]\033[0m Option not available yet')
+        return False
     elif inputformat == 'binary':
         iput = text_from_bits(inp)
     else:

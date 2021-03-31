@@ -10,6 +10,8 @@ print('''
 opt = input('\033[1;34m[=]\033[0m Option: ')
 hash1 = input('\033[1;34m[=]\033[0m Hash/Text: ')
 saltx = input('\033[1;34m[=]\033[0m [C]ustom or [R]andom Salt: ')
+saltt = ''
+salt = ''
 if saltx == 'R' or saltx == 'r':
     saltt = 'gen'
     salt = ''
@@ -24,6 +26,7 @@ if opt == '1':
     print('\033[1;32m[+]\033[0m h(x) = ' + h)
 elif opt == '2':
     dic = input('\033[1;34m[=]\033[0m Dictionary path: ')
-    bf(hash1, dic)
+    print("Not yet implemented!")
+    #bf(hash1, dic)
 else:
     print('\033[1;31m[-]\033[0m Unknown option')

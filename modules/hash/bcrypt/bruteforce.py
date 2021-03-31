@@ -1,8 +1,7 @@
 import bcrypt
 def bf(h, dictionary, salt):
     f = open(dictionary, 'r')
-    lines = f.readlines()
-    lines = lines.replace('\n', '')
+    lines = [x.replace('\n','') for x in f.readlines()]
     print('\033[1;34m[*]\033[0m Starting Brute Force - hash = ' + h)
     for i in lines:
         h2 = bcrypt.hashpw(i, salt)
