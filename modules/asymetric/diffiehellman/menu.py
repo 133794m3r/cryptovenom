@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,13 +21,9 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 from main import *
-
 print('''
-
 -=[OPTIONS:Asymetric:DH]=-
-
    1) Generate Bob/Alice values (Just from one side)
    2) Get Key given A, b and p
    3) Get Key given B, a and p
@@ -37,58 +33,41 @@ print('''
   
 ''')
 opt = input('\033[1;34m[=]\033[0m Option: ')
-
 if opt == '99':
-
     print('\033[1;34m[*]\033[0m Exiting...')
     exit()
-    
 elif opt == '1':
-
     mink = input('\033[1;34m[=]\033[0m Minimum Key Value: ')
     maxk = input('\033[1;34m[=]\033[0m Maximum Key Value: ')
     ming = input('\033[1;34m[=]\033[0m Minimum g Value: ')
     maxg = input('\033[1;34m[=]\033[0m Maximum g Value: ')
     print('\033[1;34m[*]\033[0m Generating values...')
     keys = genkey(int(mink), int(maxk), int(ming), int(maxg))
-    
     print('\t\033[1;32m[+]\033[0m g = ' + str(keys[0]))
     print('\t\033[1;32m[+]\033[0m p = ' + str(keys[1]))
     print('\t\033[1;32m[+]\033[0m a = ' + str(keys[2]))
-
 elif opt == '2':
-
     A = input('\033[1;34m[=]\033[0m A Value: ')
     b = input('\033[1;34m[=]\033[0m b Value: ')
     p = input('\033[1;34m[=]\033[0m p Value: ')
     print('\033[1;34m[*]\033[0m Getting key...')
     k = Abp(int(A), int(b), int(p))
-    
     print('\t\033[1;32m[+]\033[0m K = ' + str(k))
-
 elif opt == '3':
-
     B = input('\033[1;34m[=]\033[0m B Value: ')
     a = input('\033[1;34m[=]\033[0m a Value: ')
     p = input('\033[1;34m[=]\033[0m p Value: ')
     print('\033[1;34m[*]\033[0m Getting key...')
     k = Bap(int(B), int(a), int(p))
-    
     print('\t\033[1;32m[+]\033[0m K = ' + str(k))
-
 elif opt == '4':
-
     a = input('\033[1;34m[=]\033[0m a Value: ')
     b = input('\033[1;34m[=]\033[0m b Value: ')
     g = input('\033[1;34m[=]\033[0m g Value: ')
     p = input('\033[1;34m[=]\033[0m p Value: ')
     print('\033[1;34m[*]\033[0m Getting key...')
     k = abgp(int(a), int(b), int(g), int(p))
-    
     print('\t\033[1;32m[+]\033[0m K = ' + str(k))
-
 else:
-
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()
-

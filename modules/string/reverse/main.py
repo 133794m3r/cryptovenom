@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,25 +21,17 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 def reverse(method, inpath, outpath, string):
-
     if method == 'file':
-    
         f = open(inpath, 'r')
         string = f.read()
         f.close()
-
         outstr = string[::-1]
             
         f2 = open(outpath, 'w')
         f2.write(outstr)
         f2.close()
         return True
-    
     elif method == 'text':
-    
         outstr = string[::-1]
         return outstr
-    
-    

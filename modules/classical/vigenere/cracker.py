@@ -12,6 +12,8 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,7 +23,6 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 
 from ngram_score import ngram_score
 from pycipher import Vigenere
@@ -43,7 +44,6 @@ class nbest(object):
 
     def __len__(self):
         return len(self.store)
-
 
 
 def VigenereCracker(ctext, q1gram, t1gram):

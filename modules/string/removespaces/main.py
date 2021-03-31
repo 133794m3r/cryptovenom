@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,10 +21,7 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
-
 def removespaces(method, inpath, outpath, string, atext=' ', btext=''):
-    
     if method == 'file':
         f = open(inpath, 'r')
         string = f.read()
@@ -35,9 +32,6 @@ def removespaces(method, inpath, outpath, string, atext=' ', btext=''):
         f2.close()
     elif method == 'text':
         string = string.replace(atext, btext)
-    
         return string
-
             
             
-

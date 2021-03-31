@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,8 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,14 +22,10 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 from pycipher import Beaufort
-
 def BeaufortBF(ctext, dictionary):
-
     f = open(dictionary, 'r')
     keys = f.readlines()
-    
     for i in keys:
         try:
             out = Beaufort(i[:-1]).decipher(ctext)
@@ -36,4 +33,3 @@ def BeaufortBF(ctext, dictionary):
         except:
             print('\033[1;34m[*]\033[0m Key = ' + i[:-1] + ' ; Err.: KeyError')     
     print('\033[1;32m[+]\033[0m Brute Force finished.')
-    

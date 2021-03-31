@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,8 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,20 +22,14 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 from pycipher import Playfair
-
 def PlayfairBF(ctext, dictionary):
-
     f = open(dictionary, 'r')
     keys = f.readlines()
-    
     for i in keys:
         try:
             out = Playfair(key=i[:-1]).decipher(ctext)
             print('\033[1;34m[*]\033[0m Key = ' + i[:-1] + ' ; Out = ' + out)     
         except:
             print('\033[1;34m[*]\033[0m Key = ' + i[:-1] + ' ; Err.: KeyError')
-        
     print('\033[1;32m[+]\033[0m Brute Force finished.')
-    

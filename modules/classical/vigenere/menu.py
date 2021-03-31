@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,8 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,15 +22,11 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 from main import *
 from cracker import *
 from bruteforce import *
-
 print('''
-
 -=[OPTIONS]=-
-
    1) Encrypt
    2) Decrypt
    3) Cracker
@@ -37,141 +34,75 @@ print('''
    
 ''')
 opt = input('\033[1;34m[=]\033[0m Option: ')
-
-
 if opt == '1':
-
-
     opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
-    
     if opt2 == 'f' or opt2 == 'F':
-    
         importx = 'file'
         exportx = 'file'
-        
         text = ''
-        
         infile = input('\033[1;34m[=]\033[0m Input file path: ')
         outfile = input('\033[1;34m[=]\033[0m Output file path: ')
-    
-    
     elif opt2 == 't' or opt2 == 'T':
-    
         importx = 'print'
         exportx = 'print'
         infile = ''
         outfile = ''
-        
         text = input('\033[1;34m[=]\033[0m Text: ')
-    
-    
     else:
-    
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
-        
     format1 = input('\033[1;34m[=]\033[0m Input format (Eg.: raw or base64): ')
-    
     key = input('\033[1;34m[=]\033[0m Key: ')
-    
     out = vigenereencode(importx, infile, outfile, format1,  exportx, text, key)
-    
     print('\033[1;32m[+]\033[0m Out = ' + str(out))
     print('\033[1;32m[+]\033[0m All done!')
-
-
 elif opt == '2':
-
-
     opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
-    
     if opt2 == 'f' or opt2 == 'F':
-    
         importx = 'file'
         exportx = 'file'
-        
         text = ''
-        
         infile = input('\033[1;34m[=]\033[0m Input file path: ')
         outfile = input('\033[1;34m[=]\033[0m Output file path: ')
-    
-    
     elif opt2 == 't' or opt2 == 'T':
-    
         importx = 'print'
         exportx = 'print'
         infile = ''
         outfile = ''
-        
         text = input('\033[1;34m[=]\033[0m Text: ')
-    
-    
     else:
-    
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
-        
     format1 = input('\033[1;34m[=]\033[0m Output format (Eg.: raw or base64): ')
     key = input('\033[1;34m[=]\033[0m Key: ')
-    
     out = vigeneredecode(importx, infile, outfile, format1,  exportx, text, key)
-    
     print('\033[1;32m[+]\033[0m Out = ' + str(out))
     print('\033[1;32m[+]\033[0m All done!')
-    
 elif opt == '3':
-
     opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
-    
     if opt2 == 'f' or opt2 == 'F':
-        
         infile = input('\033[1;34m[=]\033[0m Input file path: ')
-        
         text = open(infile, 'r').read()
-    
-    
     elif opt2 == 't' or opt2 == 'T':
-        
         text = input('\033[1;34m[=]\033[0m Text: ')
-    
-    
     else:
-    
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
-        
     ngram1 = input('\033[1;34m[=]\033[0m Quadgram Path: ')
     ngram2 = input('\033[1;34m[=]\033[0m Trigram Path: ')
-    
     VigenereCracker(text, ngram1, ngram2)
-    
 elif opt == '4':
-
-
     opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
-    
     if opt2 == 'f' or opt2 == 'F':
-        
         infile = input('\033[1;34m[=]\033[0m Input file path: ')
-        
         text = open(infile, 'r').read()
-    
-    
     elif opt2 == 't' or opt2 == 'T':
-        
         text = input('\033[1;34m[=]\033[0m Text: ')
-    
-    
     else:
-    
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
-        
     dic = input('\033[1;34m[=]\033[0m Wordlist Path: ')
-    
     VigenereBF(text, dic)
-
 else:
-
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()

@@ -1,6 +1,4 @@
 #!/usr/bin/python
-
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -22,8 +20,6 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
-
 import subprocess,sys,os
 user = subprocess.check_output('whoami')
 if not user == 'root':
@@ -35,7 +31,6 @@ try:
     open('cryptovenom.py', 'r')
 except:
     a = False
-
 if(a):
     print('[INFO] Main file found, skipping...')
 else:
@@ -46,11 +41,7 @@ print('[INFO] Exec: sudo apt-get update')
 os.system('sudo apt-get update')
 print('[INFO] Installing apt-get based dependencies...')
 os.system('sudo apt-get install libgmp-dev libmpfr-dev libmpc-dev build-essential libssl-dev python-dev')
-
 print('[INFO] Installing pip requirements via -> requirements.txt')
 os.system('sudo pip3 install -r requirements.txt')
-
 print('[DONE] CryptoVenom dependencies installed sucessfully!')
 print('[WARN] If you find any error, or problem while using CryptoVenom or problems with one of it\'s dependencies contact me through Telegram (@LockedByte), email (alejandro.guerrero.rodriguez2@gmail.com) or open it in GitHub. Enjoy!')
-
-

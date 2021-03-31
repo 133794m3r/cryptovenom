@@ -12,6 +12,8 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -28,7 +30,6 @@ import re
 from itertools import permutations
 
 def AutokeyCracker(ctext, q1gram, t1gram):
-
 
     qgram = ngram_score(q1gram)
     trigram = ngram_score(t1gram)

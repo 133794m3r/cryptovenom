@@ -1,7 +1,5 @@
 import scrypt
-
 def bf(h, dictionary, salt=None):
-
     f = open(dictionary, 'r')
     lines = [x.strip() for x in f.readlines()]
     print('\033[1;34m[*]\033[0m Starting Brute Force - hash = ' + h)

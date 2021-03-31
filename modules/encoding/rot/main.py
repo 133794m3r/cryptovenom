@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,43 +21,30 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 import base64
 import base58
 import binascii
 from string import ascii_lowercase as lc 
 from string import ascii_uppercase as uc
 #from string import str.maketrans
-
-
 def rot_alpha_encode(n):
     n = int(n)
     lookup = str.maketrans(lc + uc, lc[n:] + lc[:n] + uc[n:] + uc[:n])
     return lambda s: s.translate(lookup)
-    
 def rot_alpha_decode(n):
     n = int(n) * -1
     lookup = str.maketrans(lc + uc, lc[n:] + lc[:n] + uc[n:] + uc[:n])
     return lambda s: s.translate(lookup)
-
-
-
 def text_to_bits(text, encoding='utf-8'):
     bits = bin(int(binascii.hexlify(text.encode(encoding)), 16))[2:]
     return bits.zfill(8 * ((len(bits) + 7) // 8))
-
-
 def text_from_bits(bits, encoding='utf-8'):
     n = int(bits, 2)
     return int2bytes(n).decode(encoding)
-
-
 def int2bytes(i):
     hex_string = '%x' % i
     n = len(hex_string)
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
-
-
 def rotencode(importx, infilepath, outfilepath, inputformat, raw, exportx, offset):
     if importx == 'file':
         f = open(infilepath, 'r')
@@ -68,9 +55,7 @@ def rotencode(importx, infilepath, outfilepath, inputformat, raw, exportx, offse
     else:
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
-        
     inp = raw
-    
     if inputformat == 'base64':
         iput = base64.b64decode(inp)
     elif inputformat == 'raw':
@@ -94,9 +79,7 @@ def rotencode(importx, infilepath, outfilepath, inputformat, raw, exportx, offse
     else:
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
-        
     output = rot_alpha_encode(offset)(iput)
-
     if exportx == 'file':
         f = open(outfilepath, 'w')
         f.write(output)
@@ -107,9 +90,6 @@ def rotencode(importx, infilepath, outfilepath, inputformat, raw, exportx, offse
     else:
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
-        
-        
-        
 def rotdecode(importx, infilepath, outfilepath, outputformat, raw, exportx, offset):
     if importx == 'file':
         f = open(infilepath, 'r')
@@ -120,9 +100,7 @@ def rotdecode(importx, infilepath, outfilepath, outputformat, raw, exportx, offs
     else:
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
-        
     out = rot_alpha_decode(offset)(raw)
-    
     if outputformat == 'base64':
         output = base64.b64decode(out)
     elif outputformat == 'raw':
@@ -146,8 +124,6 @@ def rotdecode(importx, infilepath, outfilepath, outputformat, raw, exportx, offs
     else:
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
-        
-
     if exportx == 'file':
         f = open(outfilepath, 'w')
         f.write(output)

@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,15 +21,11 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 def blockreverse(method, inpath, outpath, string, delimiter, revblocks):
-
     if method == 'file':
-    
         f = open(inpath, 'r')
         string = f.read()
         f.close()
-
         if revblocks:
             string2 = string.split(delimiter)
             outstr = ''
@@ -47,9 +43,7 @@ def blockreverse(method, inpath, outpath, string, delimiter, revblocks):
         f2.write(outstr)
         f2.close()
         return True
-    
     elif method == 'text':
-    
         if revblocks:
             string2 = string.split(delimiter)
             outstr = ''
@@ -62,5 +56,3 @@ def blockreverse(method, inpath, outpath, string, delimiter, revblocks):
             for i in string2:
                 outstr = outstr + i[::-1] + delimiter
             return outstr[:-len(delimiter)]
-    
-    

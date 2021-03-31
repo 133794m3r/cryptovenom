@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,8 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,21 +22,16 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 def NAND(a, b):
     A = []
     B = []
     C = []
     for ax in a:
         A.append(ax)
-        
     for bx in b:
         B.append(bx)
-
     if len(A) == len(B):
-    
         for i in range(len(A)):
-        
             if A[i] == '0' and B[i] == '1':
             
                 C.append('1')
@@ -55,8 +51,5 @@ def NAND(a, b):
     out = ''
     for i in C:
         out += i
-        
     print('\033[1;32m[+]\033[0m ' + a + ' NAND ' + b + ' = ' + out)
-    
-        
             

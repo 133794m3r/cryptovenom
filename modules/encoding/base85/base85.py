@@ -22,13 +22,11 @@
 # how clean and legible Python software is written. This code employs a few
 # common tricks to reduce computation time. Ensure that you understand them
 # before working with this code.
-
 """:synopsis: ASCII-85 and RFC1924 Base85 encoding and decoding functions.
 :module: mom.codec.base85
 :see: http://en.wikipedia.org/wiki/Ascii85
 :see: http://tools.ietf.org/html/rfc1924
 :see: http://www.piclist.com/techref/method/encode.htm
-
 Where should you use base85?
 ----------------------------
 Base85-encoding is used to compactly represent binary data in 7-bit ASCII.
@@ -36,7 +34,6 @@ It is, therefore, 7-bit MIME-safe but not safe to use in URLs, SGML, HTTP
 cookies, and other similar places. Example scenarios where Base85 encoding
 can be put to use are Adobe PDF documents, Adobe PostScript format, binary
 diffs (patches), efficiently storing RSA keys, etc.
-
 The ASCII85 character set-based encoding is mostly used by Adobe PDF and
 PostScript formats. It may also be used to store RSA keys or binary data
 with a lot of zero byte sequences. The RFC1924 character set-based encoding,
@@ -44,19 +41,16 @@ however, may be used to compactly represent 128-bit unsigned integers (like
 IPv6 addresses) or binary diffs. Encoding based on RFC1924 does not compact
 zero byte sequences, so this form of encoding is less space-efficient than
 the ASCII85 version which compacts redundant zero byte sequences.
-
 About base85 and this implementation
 ------------------------------------
 Base-85 represents 4 bytes as 5 ASCII characters. This is a 7% improvement
 over base-64, which translates to a size increase of ~25% over plain
 binary data for base-85 versus that of ~37% for base-64.
-
 However, because the base64 encoding routines in Python are implemented
 in C, base-64 may be less expensive to compute. This implementation of
 base-85 uses a lot of tricks to reduce computation time and is hence
 generally faster than many other implementations. If computation speed
 is a concern for you, please contribute a C implementation or wait for one.
-
 Functions
 ---------
 .. autofunction:: b85encode
@@ -66,10 +60,8 @@ Functions
 .. autofunction:: ipv6_b85encode
 .. autofunction:: ipv6_b85decode
 """
-
 from __future__ import absolute_import
 from __future__ import division
-
 # pylint: disable-msg=R0801
 try:  #pragma: no cover
   import psyco
@@ -77,18 +69,12 @@ try:  #pragma: no cover
 except ImportError:  #pragma: no cover
   psyco = None
 # pylint: enable-msg=R0801
-
 import array
 import struct
-
 from mom import _compat
 from mom import builtins
 from mom import string
-
-
 __author__ = "yesudeep@google.com (Yesudeep Mangalapilly)"
-
-
 __all__ = [
 	"b85encode",
 	"b85decode",
@@ -99,25 +85,19 @@ __all__ = [
 	"ipv6_b85encode",
 	"ipv6_b85decode",
 	]
-
-
 b = builtins.b
 ZERO_BYTE = _compat.ZERO_BYTE
 UINT128_MAX = _compat.UINT128_MAX
 UINT32_MAX = _compat.UINT32_MAX
 EMPTY_BYTE = _compat.EMPTY_BYTE
-
 EXCLAMATION_CHUNK = b("!!!!!")
 ZERO_GROUP_CHAR = b("z")
-
 # Use this if you want the base85 codec to encode/decode including
 # ASCII85 prefixes/suffixes.
 ASCII85_PREFIX = b("<~")
 ASCII85_SUFFIX = b("~>")
-
 # ASCII85 characters.
 ASCII85_BYTES = array.array("B", [(num + 33) for num in builtins.range(85)])
-
 # I've left this approach in here to warn you to NOT use it.
 # This results in a massive amount of calls to byte_ord inside
 # tight loops. Don't use the array. Use the dictionary. It
@@ -125,14 +105,11 @@ ASCII85_BYTES = array.array("B", [(num + 33) for num in builtins.range(85)])
 # ASCII85_ORDS = array.array("B", [255] * 128)
 # for ordinal, _byte in enumerate(ASCII85_BYTES):
 #   ASCII85_ORDS[_byte] = ordinal
-
-
 # http://tools.ietf.org/html/rfc1924
 RFC1924_BYTES = array.array("B", (string.DIGITS +
 								  string.ASCII_UPPERCASE +
 								  string.ASCII_LOWERCASE +
 								  "!#$%&()*+-;<=>?@^_`{|}~").encode("ascii"))
-
 # I've left this approach in here to warn you to NOT use it.
 # This results in a massive amount of calls to byte_ord inside
 # tight loops. Don't use the array. Use the dictionary. It
@@ -140,7 +117,6 @@ RFC1924_BYTES = array.array("B", (string.DIGITS +
 # RFC1924_ORDS = array.array("B", [255] * 128)
 # for ordinal, _byte in enumerate(RFC1924_BYTES):
 #   RFC1924_ORDS[_byte] = ordinal
-
 if _compat.HAVE_PYTHON3:  # pragma: no cover
   # Python 3 bytes when indexed yield integers, not single-character
   # byte strings.
@@ -151,8 +127,6 @@ else:
   ASCII85_ORDS = dict((builtins.byte(x), x - 33) for x in ASCII85_BYTES)
   RFC1924_ORDS = dict((builtins.byte(x), i)
 					  for i, x in enumerate(RFC1924_BYTES))
-
-
 # Pre-computed powers (array index) of 85 used to unroll encoding loops
 # Therefore, 85**i is equivalent to POW_85[i] for index 0 through 19
 # (inclusive).
@@ -180,13 +154,10 @@ POW_85 = (
 	53646409805556201900516510009765625,
 	4559944833472277161543903350830078125,
 	)
-
-
 def _check_compact_char_occurrence(encoded, zero_char, chunk_size=5):
   """Ensures "z" characters do not occur in the middle of 5-tuple chunks
   when decoding. It will raise a ``ValueError`` if such an occurrence is
   found.
-
   :param encoded:
 	  The encoded sequence. (ASCII encoded string).
   :param zero_char:
@@ -204,15 +175,12 @@ def _check_compact_char_occurrence(encoded, zero_char, chunk_size=5):
 		counter = 0
 	else:
 	  counter += 1
-
-
 def _b85encode_chunks(raw_bytes,
 					  base85_bytes,
 					  padding=False,
 					  pow_85=POW_85,
 					  zero_byte=ZERO_BYTE):
   """Base85 encodes processing 32-bit chunks at a time.
-
   :param raw_bytes:
 	  Raw bytes.
   :param base85_bytes:
@@ -243,7 +211,6 @@ def _b85encode_chunks(raw_bytes,
 	num_uint32 += 1
   else:
 	padding_size = 0
-
   encoded = array.array("B", [0] * num_uint32 * 5)
   # ASCII85 uses a big-endian convention.
   # See: http://en.wikipedia.org/wiki/Ascii85
@@ -261,20 +228,15 @@ def _b85encode_chunks(raw_bytes,
 	encoded[i + 3] = base85_bytes[(uint32 // 85) % 85]     # 85**1 = 85
 	encoded[i + 4] = base85_bytes[uint32 % 85]             # 85**0 = 1
 	i += 5
-
   if padding_size and not padding:
 	# Only as much padding added before encoding is removed after encoding.
 	encoded = encoded[:-padding_size]
-
   # In Python 3, this method is deprecated, but as long as we are
   # supporting Python 2.5, we need to use this. Python 3.x names it
   # ``tobytes()``.
   return encoded.tostring()
-
-
 def _b85decode_chunks(encoded, base85_bytes, base85_ords):
   """Base-85 decodes.
-
   :param encoded:
 	  Encoded ASCII string.
   :param base85_bytes:
@@ -297,7 +259,6 @@ def _b85decode_chunks(encoded, base85_bytes, base85_ords):
 	length += padding_size
   else:
 	padding_size = 0
-
   #uint32s = [0] * num_uint32s
   uint32s = array.array("I", [0] * num_uint32s)
   j = 0
@@ -326,19 +287,15 @@ def _b85decode_chunks(encoded, base85_bytes, base85_ords):
 	  # (encoded as "s8W-!") will cause a decoding error. Bad byte?
 	  if uint32_value > UINT32_MAX:  # 2**32 - 1
 		raise OverflowError("Cannot decode chunk `%r`" % chunk)
-
 	  uint32s[j] = uint32_value
 	  j += 1
   except KeyError:
 	raise OverflowError("Cannot decode chunk `%r`" % chunk)
-
   raw_bytes = struct.pack(">" + "L" * num_uint32s, *uint32s)
   if padding_size:
 	# Only as much padding added before decoding is removed after decoding.
 	raw_bytes = raw_bytes[:-padding_size]
   return raw_bytes
-
-
 def b85encode(raw_bytes,
 			  prefix=None,
 			  suffix=None,
@@ -347,23 +304,17 @@ def b85encode(raw_bytes,
 			  _compact_zero=True,
 			  _compact_char=ZERO_GROUP_CHAR):
   """ASCII-85 encodes a sequence of raw bytes.
-
   The character set in use is::
-
 	  ASCII 33 ("!") to ASCII 117 ("u")
-
   If the number of raw bytes is not divisible by 4, the byte sequence
   is padded with up to 3 null bytes before encoding. After encoding,
   as many bytes as were added as padding are removed from the end of the
   encoded sequence if ``padding`` is ``False`` (default).
-
   Encodes a zero-group (\x00\x00\x00\x00) as "z" instead of "!!!!!".
-
   The resulting encoded ASCII string is *not URL-safe* nor is it
   safe to include within SGML/XML/HTML documents. You will need to escape
   special characters if you decide to include such an encoded string
   within these documents.
-
   :param raw_bytes:
 	  Raw bytes.
   :param prefix:
@@ -391,14 +342,11 @@ def b85encode(raw_bytes,
   if not builtins.is_bytes(raw_bytes):
 	raise TypeError("data must be raw bytes: got %r" %
 					type(raw_bytes).__name__)
-
   # Encode into ASCII85 characters.
   encoded = _b85encode_chunks(raw_bytes, _base85_bytes, _padding)
   encoded = (encoded.replace(EXCLAMATION_CHUNK, _compact_char)
 			 if _compact_zero else encoded)
   return prefix + encoded + suffix
-
-
 def b85decode(encoded,
 			  prefix=None,
 			  suffix=None,
@@ -407,7 +355,6 @@ def b85decode(encoded,
 			  _uncompact_zero=True,
 			  _compact_char=ZERO_GROUP_CHAR):
   """Decodes an ASCII85-encoded string into raw bytes.
-
   :param encoded:
 	  Encoded ASCII string.
   :param prefix:
@@ -429,7 +376,6 @@ def b85decode(encoded,
   """
   prefix = prefix or EMPTY_BYTE
   suffix = suffix or EMPTY_BYTE
-
   if not (builtins.is_bytes(prefix) and builtins.is_bytes(suffix)):
 	raise TypeError("Prefix/suffix must be bytes: got prefix %r, %r" %
 					(type(prefix).__name__, type(suffix).__name__))
@@ -439,40 +385,28 @@ def b85decode(encoded,
   if not builtins.is_bytes(encoded):
 	raise TypeError("Encoded sequence must be bytes: got %r" %
 					type(encoded).__name__)
-
   # ASCII-85 ignores whitespace.
   encoded = EMPTY_BYTE.join(encoded.split())
-
   # Strip the prefix and suffix.
   if prefix and encoded.startswith(prefix):
 	encoded = encoded[len(prefix):]
   if suffix and encoded.endswith(suffix):
 	encoded = encoded[:-len(suffix)]
-
   # Replace all the "z" occurrences with "!!!!!"
   if _uncompact_zero:
 	_check_compact_char_occurrence(encoded, _compact_char)
 	encoded = encoded.replace(_compact_char, EXCLAMATION_CHUNK)
-
   return _b85decode_chunks(encoded, _base85_bytes, _base85_ords)
-
-
 def rfc1924_b85encode(raw_bytes,
 					  _padding=False):
   """Base85 encodes using the RFC1924 character set.
-
   The character set is::
-
 	  0–9, A–Z, a–z, and then !#$%&()*+-;<=>?@^_`{|}~
-
   These characters are specifically not included::
-
 	  "',./:[]\\
-
   This is the encoding method used by Mercurial (and git?) to generate
   binary diffs, for example. They chose the IPv6 character set and encode
   using the ASCII85 encoding method while not compacting zero-byte sequences.
-
   :see: http://tools.ietf.org/html/rfc1924
   :param raw_bytes:
 	  Raw bytes.
@@ -486,15 +420,11 @@ def rfc1924_b85encode(raw_bytes,
 	raise TypeError("data must be raw bytes: got %r" %
 					type(raw_bytes).__name__)
   return _b85encode_chunks(raw_bytes, RFC1924_BYTES, _padding)
-
-
 def rfc1924_b85decode(encoded):
   """Base85 decodes using the RFC1924 character set.
-
   This is the encoding method used by Mercurial (and git) to generate
   binary diffs, for example. They chose the IPv6 character set and encode
   using the ASCII85 encoding method while not compacting zero-byte sequences.
-
   :see: http://tools.ietf.org/html/rfc1924
   :param encoded:
 	  RFC1924 Base85 encoded string.
@@ -507,13 +437,10 @@ def rfc1924_b85decode(encoded):
 	# Ignore whitespace.
   encoded = EMPTY_BYTE.join(encoded.split())
   return _b85decode_chunks(encoded, RFC1924_BYTES, RFC1924_ORDS)
-
-
 def ipv6_b85encode(uint128,
 				   _base85_bytes=RFC1924_BYTES):
   """Encodes a 128-bit unsigned integer using the RFC 1924 base-85 encoding.
   Used to encode IPv6 addresses or 128-bit chunks.
-
   :param uint128:
 	  A 128-bit unsigned integer to be encoded.
   :param _base85_bytes:
@@ -556,16 +483,12 @@ def ipv6_b85encode(uint128,
 					 _base85_bytes[(uint128 // 85) % 85],  # 85**1 == 85
 					 _base85_bytes[uint128 % 85],          # 85**0 == 1
 					)
-
-
 def ipv6_b85decode(encoded,
 				   _base85_ords=None):
   """Decodes an RFC1924 Base-85 encoded string to its 128-bit unsigned integral
   representation. Used to base85-decode IPv6 addresses or 128-bit chunks.
-
   Whitespace is ignored. Raises an ``OverflowError`` if stray characters
   are found.
-
   :param encoded:
 	  RFC1924 Base85-encoded string.
   :param _base85_ords:
@@ -578,13 +501,10 @@ def ipv6_b85decode(encoded,
   if not builtins.is_bytes(encoded):
 	raise TypeError("Encoded sequence must be bytes: got %r" %
 					type(encoded).__name__)
-
   # Ignore whitespace.
   encoded = EMPTY_BYTE.join(encoded.split())
-
   if len(encoded) != 20:
 	raise ValueError("Not 20 encoded bytes: %r" % encoded)
-
   #uint128 = 0
   #for char in encoded:
   #    uint128 = uint128 * 85 + _base85_ords[byte_ord(char)]
@@ -621,16 +541,13 @@ def ipv6_b85decode(encoded,
   except KeyError:
 	raise OverflowError("Cannot decode `%r -- may contain stray "
 						"ASCII bytes" % encoded)
-
   if uint128 > UINT128_MAX:
 	raise OverflowError("Cannot decode `%r` -- may contain stray "
 						"ASCII bytes" % encoded)
   return uint128
-
   # I've left this approach in here to warn you to NOT use it.
   # This results in a massive amount of calls to byte_ord inside
   # tight loops.
-
 #    v, w, x, y, z = encoded[0:5]
 #    v = encoded[0]..z = encoded[4]
 #    uint128 = ((((_base85_ords[byte_ord(encoded[0])] *
@@ -685,4 +602,3 @@ def ipv6_b85decode(encoded,
 #                85 + _base85_ords[byte_ord(encoded[17])]) *
 #                85 + _base85_ords[byte_ord(encoded[18])]) *
 #                85 + _base85_ords[byte_ord(encoded[19])])
-

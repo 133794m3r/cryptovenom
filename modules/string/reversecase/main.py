@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,16 +21,11 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
-
 def reversecase(method, inpath, outpath, string):
-
     if method == 'file':
-    
         f = open(inpath, 'r')
         string = f.read()
         f.close()
-        
         outstr = ''
         for i in string:
             if i.isupper():
@@ -41,9 +36,7 @@ def reversecase(method, inpath, outpath, string):
         f2.write(outstr)
         f2.close()
         return True     
-    
     elif method == 'text':
-    
         outstr = ''
         for i in string:
             if i.isupper():
@@ -51,7 +44,5 @@ def reversecase(method, inpath, outpath, string):
             else:
                 outstr = outstr + i.upper()
         return outstr
-
             
             
-

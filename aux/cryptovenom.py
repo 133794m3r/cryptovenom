@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -21,22 +20,16 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 import os
 import time
 import random
 import base64
 import subprocess
-
 # HARDCODED CONFIG
-
 CONFIG_FILEPATH = 'aux/config.conf'
 DEBUG_MODE = False
 VERSION = '1.0.1'
-
-
 def banner(version):
-
     banner1 = '''
   ____                  _     __     __                         
  / ___|_ __ _   _ _ __ | |_ __\ \   / /__ _ __   ___  _ __ ___  
@@ -48,9 +41,7 @@ def banner(version):
 Version: <VERSION>       << The Cryptography Swiss Army knife >>
 -------------------------------------------------------------------
 '''
-
     banner2 = ''' 
-
  _____________
 < CryptoVenom >
  -------------
@@ -58,13 +49,10 @@ Version: <VERSION>       << The Cryptography Swiss Army knife >>
          \  (oo)\_______
             (__)\       )\/\ \n                ||----w |
                 ||     ||
-
 Version: <VERSION>       << The Cryptography Swiss Army knife >>
 ------------------------------------------------------------------
 '''
-
     banner3 = ''' 
-
     __  ____   __ __  ____  ______   ___   __ __    ___  ____    ___   ___ ___ 
    /  ]|    \ |  |  ||    \|      | /   \ |  |  |  /  _]|    \  /   \ |   |   |
   /  / |  D  )|  |  ||  o  )      ||     ||  |  | /  [_ |  _  ||     || _   _ |
@@ -76,7 +64,6 @@ Version: <VERSION>       << The Cryptography Swiss Army knife >>
 Version: <VERSION>               << The Cryptography Swiss Army knife >>
 ------------------------------------------------------------------------------
 '''
-
     banner4 = ''' 
                                                                     
    (                         )                                      
@@ -87,12 +74,9 @@ Version: <VERSION>               << The Cryptography Swiss Army knife >>
  | (__ | '_|| || || '_ \)|  _|/ _ \ \ V / / -_)| ' \))/ _ \| '  \() 
   \___||_|   \_, || .__/  \__|\___/  \_/  \___||_||_| \___/|_|_|_|  
              |__/ |_|                                               
-
 Version: <VERSION>      << The Cryptography Swiss Army knife >>
 -------------------------------------------------------------------------
 '''
-
-
     banner5 = ''' 
                                                    
  _____             _       _____                   
@@ -100,28 +84,18 @@ Version: <VERSION>      << The Cryptography Swiss Army knife >>
 |   --|  _| | | . |  _| . |  |  | -_|   | . |     |
 |_____|_| |_  |  _|_| |___|\___/|___|_|_|___|_|_|_|
           |___|_|                                  
-
 Version: <VERSION>     << The Cryptography Swiss Army knife >>
 ------------------------------------------------------------------
 '''
-
     banner6 = '\n' + base64.b64decode('IOKWhOKWhMK3IOKWhOKWhOKWhCAgIOKWhMK3IOKWhOKWjCDiloTiloTiloTCt+KWhOKWhOKWhOKWhOKWhCAgICAgICDilowg4paQwrfiloTiloTiloQgLiDilpAg4paEICAgICAgIOKAoiDilowg4paEIMK3LiAK4paQ4paIIOKWjOKWquKWgOKWhCDilojCt+KWkOKWiOKWquKWiOKWiOKWjOKWkOKWiCDiloTilojigKLilojiloggIOKWqiAgICAg4paq4paIwrfilojiloziloDiloQu4paAwrfigKLilojilozilpDilojilqogICAgIMK34paI4paIIOKWkOKWiOKWiOKWiOKWqgrilojilogg4paE4paE4paQ4paA4paA4paEIOKWkOKWiOKWjOKWkOKWiOKWqiDilojilojiloDCtyDilpDilogu4paqIOKWhOKWiOKWgOKWhCDilpDilojilpDilojigKLilpDiloDiloDilqriloTilpDilojilpDilpDilowg4paE4paI4paA4paEIOKWkOKWiCDilozilpDilozilpDilojCtwrilpDilojilojilojilozilpDilojigKLilojilowg4paQ4paI4paAwrcu4paQ4paI4paqwrfigKIg4paQ4paI4paMwrfilpDilojilowu4paQ4paMIOKWiOKWiOKWiCDilpDilojiloTiloTilozilojilojilpDilojilozilpDilojilowu4paQ4paM4paI4paIIOKWiOKWiOKWjOKWkOKWiOKWjArCt+KWgOKWgOKWgCAu4paAICDiloAgIOKWgCDigKIgLuKWgCAgICDiloDiloDiloAgIOKWgOKWiOKWhOKWgOKWqi4g4paAICAg4paA4paA4paAIOKWgOKWgCDilojilqog4paA4paI4paE4paA4paq4paA4paAICDilojilqriloDiloDiloAK').decode('utf-8') +'''
 Version: <VERSION>        << The Cryptography Swiss Army knife >>
 --------------------------------------------------------------------'''
-
     banners = [banner1, banner2, banner3, banner4, banner5, banner6, banner6, banner6, banner6]
     random_number = random.randint(0, len(banners)-1)
     print(banners[random_number].replace('<VERSION>', version))
-        
-
-    
-
 def menu(menu):
-
     if menu == 'main':
-    
         print('''-[MENU]-
-        
     0) Crackssistant (NOT YET)
     1) Symmetric Algorithms
     2) Asymmetric Algorithms
@@ -134,84 +108,56 @@ def menu(menu):
     9) Randomization Functions
    10) Other
    11) About CryptoVenom
-    
    99) Exit
    
 ''')
         option = input('\033[1;34m[=]\033[0m Option: ')
-        
         if option == '99':
-        
             print('\033[1;34m[*]\033[0m Exiting...')
             exit()
             
         elif option == '0':
-        
             return 'crackssistant'
             
         elif option == '1':
-        
             return 'symmetric'
-        
         elif option == '2':
-        
             return 'asymmetric'
-        
         elif option == '3':
-        
             return 'encoding'
-        
         elif option == '4':
-        
             return 'classical'
             
         elif option == '5':
-        
             return 'hash'
             
         elif option == '6':
-        
             return 'math'
             
         elif option == '7':
-        
             return 'identifiers'
             
         elif option == '8':
-        
             return 'string'
             
         elif option == '9':
-        
             return 'random'
             
         elif option == '10':
-        
             return 'other'
             
         elif option == '11':
-        
             return 'about'
-        
         else:
-        
             print('\033[1;31m[-]\033[0m Unknown option')
-
     elif menu == 'crackssistant':
-    
         print('''
 -[MENU]-
-
 [%]...STILL IN DEVELOPMENT...[%]
-    
-    
 ''')
-    
     elif menu == 'symmetric':
-    
         print('''
 -[MENU:Symmetric]-
-
     1) AES / Rijndael (Advanced Encryption Algorithm)
     2) DES (Data Encryption Standard)
     3) XOR Cipher
@@ -224,104 +170,58 @@ def menu(menu):
    10) SCrypt
    
    99) Exit
-    
-    
 ''')
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-        
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/symetric/aes/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/symetric/des/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/symetric/xor/menu.py auto')
-    
         elif option == '4':
-    
             os.system('python3 modules/symetric/blowfish/menu.py auto')
-    
         elif option == '5':
      
             os.system('python3 modules/symetric/twofish/menu.py auto')
-    
         elif option == '6':
-    
             os.system('python3 modules/symetric/3des/menu.py auto')
-    
         elif option == '7':
-    
             os.system('python3 modules/symetric/rc2/menu.py auto')
-    
         elif option == '8':
-    
             os.system('python3 modules/symetric/rc4/menu.py auto')
-    
         elif option == '9':
-    
             os.system('python3 modules/symetric/cast/menu.py auto')
             
         elif option == '10':
-    
             os.system('python3 modules/symetric/scrypt/menu.py auto')
-    
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-    
     elif menu == 'asymmetric':
-    
         print('''
 -[MENU:Asymmetric]-
-
     1) RSA
     2) Diffie-Hellman (DH)
     3) DSA (Digital Signature Algorithm)
-    
    99) Exit
-    
-    
 ''')
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/asymetric/rsa/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/asymetric/diffiehellman/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/asymetric/dsa/menu.py auto')
-
-    
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-
     elif menu == 'encoding':
-    
         print('''
 -[MENU:Encoding]-
-
     1) Base64
     2) Base32
     3) Base16
@@ -336,74 +236,43 @@ def menu(menu):
    12) ROT-x
    
    99) Exit
-
-    
 ''')
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/encoding/base64/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/encoding/base32/menu.py auto')
      
         elif option == '3':
-    
             os.system('python3 modules/encoding/base16/menu.py auto')
-    
         elif option == '4':
-    
             os.system('python3 modules/encoding/base58/menu.py auto')
-    
         elif option == '5':
-    
             os.system('python3 modules/encoding/base85/menu.py auto')
             
         elif option == '6':
-    
             os.system('python3 modules/encoding/base91/menu.py auto')
-    
         elif option == '7':
-    
             os.system('python3 modules/encoding/hexadecimal/menu.py auto')
-    
         elif option == '8':
-    
             os.system('python3 modules/encoding/binary/menu.py auto')
-    
         elif option == '9':
-    
             os.system('python3 modules/encoding/octal/menu.py auto')
-    
         elif option == '10':
-    
             os.system('python3 modules/encoding/decimal/menu.py auto')
-    
         elif option == '11':
-    
             os.system('python3 modules/encoding/url/menu.py auto')
-    
         elif option == '12':
-    
             os.system('python3 modules/encoding/rot/menu.py auto')
               
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-        
     elif menu == 'classical':
-    
         print('''
 -[MENU:Classical]-
-
     1) Caesar
     2) Vigenere Cipher
     3) Playfair Cipher
@@ -427,119 +296,65 @@ def menu(menu):
    21) ADFGX Cipher
    22) Affine Cipher
    23) Vernam Cipher
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/classical/caesar/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/classical/vigenere/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/classical/playfair/menu.py auto')
-    
         elif option == '4':
-    
             os.system('python3 modules/classical/polybius/menu.py auto')
-    
         elif option == '5':
-    
             os.system('python3 modules/classical/morse/menu.py auto')
-    
         elif option == '6':
-    
             os.system('python3 modules/classical/atbash/menu.py auto')
-    
         elif option == '7':
-    
             os.system('python3 modules/classical/baconian/menu.py auto')
-    
         elif option == '8':
-    
             os.system('python3 modules/classical/autokey/menu.py auto')
-    
         elif option == '9':
-    
             os.system('python3 modules/classical/beaufort/menu.py auto')
-    
         elif option == '10':
-    
             os.system('python3 modules/classical/railfence/menu.py auto')
-      
         elif option == '11':
      
             os.system('python3 modules/classical/substitution/menu.py auto')
-        
         elif option == '12':
-    
             os.system('python3 modules/classical/coltrans/menu.py auto')
-    
         elif option == '13':
-    
             os.system('python3 modules/classical/bifid/menu.py auto')
-    
         elif option == '14':
-    
             os.system('python3 modules/classical/foursquare/menu.py auto')
-      
         elif option == '15':
-    
            os.system('python3 modules/classical/fractionatedmorse/menu.py auto')
-    
         elif option == '16':
-    
             os.system('python3 modules/classical/enigma/menu.py auto')
-    
         elif option == '17':
-    
             os.system('python3 modules/classical/gronsfeld/menu.py auto')
-    
         elif option == '18':
-    
             os.system('python3 modules/classical/porta/menu.py auto')
-    
         elif option == '19':
-    
             os.system('python3 modules/classical/runningkey/menu.py auto')
-
         elif option == '20':
-    
             os.system('python3 modules/classical/adfgvx/menu.py auto')
             
         elif option == '21':
-    
             os.system('python3 modules/classical/adfgx/menu.py auto')
-
         elif option == '22':
-    
             os.system('python3 modules/classical/affine/menu.py auto')
-
         elif option == '23':
-    
             os.system('python3 modules/classical/vernam/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-        
     elif menu == 'hash':
-    
         print('''
 -[MENU:Hashing]-
-
     1) MD5
     2) SHA-1
     3) SHA-224
@@ -584,277 +399,153 @@ def menu(menu):
    42) SHA-256 Unix
    43) SHA-512 Unix
    44) Sun MD5 Unix
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/hash/md5/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/hash/sha1/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/hash/sha224/menu.py auto')
-    
         elif option == '4':
-    
             os.system('python3 modules/hash/sha256/menu.py auto')
-    
         elif option == '5':
-    
             os.system('python3 modules/hash/sha384/menu.py auto')
-    
         elif option == '6':
-    
             os.system('python3 modules/hash/sha512/menu.py auto')
-    
         elif option == '7':
-    
             os.system('python3 modules/hash/md2/menu.py auto')
      
         elif option == '8':
-    
             os.system('python3 modules/hash/md4/menu.py auto')
-    
         elif option == '9':
-    
             os.system('python3 modules/hash/argon2/menu.py auto')
-    
         elif option == '10':
-    
             os.system('python3 modules/hash/bcrypt/menu.py auto')
-    
         elif option == '11':
-    
             os.system('python3 modules/hash/bigcryptunix/menu.py auto')
-    
         elif option == '12':
-    
             os.system('python3 modules/hash/blake2b/menu.py auto')
-        
         elif option == '13':
-    
             os.system('python3 modules/hash/blake2s/menu.py auto')
-    
         elif option == '14':
-    
             os.system('python3 modules/hash/bsdicryptunix/menu.py auto')
-    
         elif option == '15':
-    
             os.system('python3 modules/hash/ciscoasa/menu.py auto')
-    
         elif option == '16':
-    
             os.system('python3 modules/hash/ciscopix/menu.py auto')
-
         elif option == '17':
-    
             os.system('python3 modules/hash/ciscotype7/menu.py auto')
-    
         elif option == '18':
-    
             os.system('python3 modules/hash/crypt16unix/menu.py auto')
-    
         elif option == '19':
-    
             os.system('python3 modules/hash/descryptunix/menu.py auto')
      
         elif option == '20':
-    
             os.system('python3 modules/hash/freebsdunix/menu.py auto')
-    
         elif option == '21':
-    
             os.system('python3 modules/hash/hmac/menu.py auto')
-    
         elif option == '22':
-    
             os.system('python3 modules/hash/ldapmd5/menu.py auto')
-    
         elif option == '23':
-    
             os.system('python3 modules/hash/ldapsaltedmd5/menu.py auto')
-    
         elif option == '24':
-    
             os.system('python3 modules/hash/ldapsha1/menu.py auto')
-        
         elif option == '25':
-    
             os.system('python3 modules/hash/ldapsaltedsha1/menu.py auto')
-    
         elif option == '26':
-    
             os.system('python3 modules/hash/lmhash/menu.py auto')
-    
         elif option == '27':
-    
             os.system('python3 modules/hash/md5unix/menu.py auto')
-    
         elif option == '28':
-    
             os.system('python3 modules/hash/msdcc/menu.py auto')
             
         elif option == '29':
-    
             os.system('python3 modules/hash/msdcc2/menu.py auto')
-        
         elif option == '30':
-    
             os.system('python3 modules/hash/mssql2000/menu.py auto')
-    
         elif option == '31':
-    
             os.system('python3 modules/hash/mssql2005/menu.py auto')
-    
         elif option == '32':
-    
             os.system('python3 modules/hash/mysql41/menu.py auto')
-    
         elif option == '33':
-    
             os.system('python3 modules/hash/mysql323/menu.py auto')
             
-
         elif option == '34':
-    
             os.system('python3 modules/hash/nthash/menu.py auto')
             
         elif option == '35':
-    
             os.system('python3 modules/hash/ntlm/menu.py auto')
-        
         elif option == '36':
-    
             os.system('python3 modules/hash/oracle10/menu.py auto')
-    
         elif option == '37':
-    
             os.system('python3 modules/hash/oracle11/menu.py auto')
-    
         elif option == '38':
-    
             os.system('python3 modules/hash/phpass/menu.py auto')
-    
         elif option == '39':
-    
             os.system('python3 modules/hash/postgresmd5/menu.py auto')
             
-
         elif option == '40':
-    
             os.system('python3 modules/hash/ripemd/menu.py auto')
-        
         elif option == '41':
-    
             os.system('python3 modules/hash/scrypt/menu.py auto')
-    
         elif option == '42':
-    
             os.system('python3 modules/hash/sha256unix/menu.py auto')
-    
         elif option == '43':
-    
             os.system('python3 modules/hash/sha512unix/menu.py auto')
-    
         elif option == '44':
-    
             os.system('python3 modules/hash/sunmd5unix/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
             
     elif menu == 'math':
-    
         print('''
 -[MENU:Mathematical]-
-
     1) Extended Ecluidean Algorithm
     2) Fast Exponentiation Algorithm
     3) Factorize product of primes
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/math/exteuc/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/math/fastexp/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/math/primefactor/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
             
     elif menu == 'identifiers':
-    
         print('''
 -[MENU:Identifiers]-
-
     1) Encoding Identifiers
     2) Hash Identifiers
     3) Language Identifiers
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/identifiers/encoding/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/identifiers/hash/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/identifiers/lang/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-
     elif menu == 'string':
-    
         print('''
 -[MENU:String]-
-
     1) String to Upper Case
     2) String to Lower Case
     3) Reverse String
@@ -865,103 +556,57 @@ def menu(menu):
     8) One-Byte List
     9) Add Line Numbers
    10) String Replacement
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/string/upper/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/string/lower/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/string/reverse/menu.py auto')
-    
         elif option == '4':
-    
             os.system('python3 modules/string/blockreverse/menu.py auto')
-    
         elif option == '5':
-    
             os.system('python3 modules/string/removespaces/menu.py auto')
-    
         elif option == '6':
-    
             os.system('python3 modules/string/removeenters/menu.py auto')
-    
         elif option == '7':
-    
             os.system('python3 modules/string/reversecase/menu.py auto')
-    
         elif option == '8':
-    
             os.system('python3 modules/string/onebytelist/menu.py auto')
-    
         elif option == '9':
-    
             os.system('python3 modules/string/addlinenumbers/menu.py auto')
-    
         elif option == '10':
-    
             os.system('python3 modules/string/replace/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')       
-
     elif menu == 'random':
-    
         print('''
 -[MENU:Randomization]-
-
     1) Random String
     2) Random Number
     3) Random IV (Initialization Vector)
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/random/randomstring/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/random/randomnumber/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/random/randomiv/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-
     elif menu == 'other':
-    
         print('''
 -[MENU:Other]-
-
     1) PGP Functions
     2) Logic Operation XOR
     3) Logic Operation XNOR
@@ -970,68 +615,37 @@ def menu(menu):
     6) Logic Operation OR
     7) Logic Operation NOR
     8) Logic Operation NOT
-
    99) Exit
-    
 ''')   
-
         option = input('\033[1;34m[=]\033[0m Option: ')
-    
         if option == '99':
-    
             print('\033[1;34m[*]\033[0m Exiting')
             exit()
-    
         elif option == '1':
-    
             os.system('python3 modules/other/pgp/menu.py auto')
-    
         elif option == '2':
-    
             os.system('python3 modules/other/xor/menu.py auto')
-    
         elif option == '3':
-    
             os.system('python3 modules/other/xnor/menu.py auto')
-    
         elif option == '4':
-    
             os.system('python3 modules/other/and/menu.py auto')
-    
         elif option == '5':
-    
             os.system('python3 modules/other/nand/menu.py auto')
-    
         elif option == '6':
-    
             os.system('python3 modules/other/or/menu.py auto')
-    
         elif option == '7':
-    
             os.system('python3 modules/other/nor/menu.py auto')
-    
         elif option == '8':
-    
             os.system('python3 modules/other/not/menu.py auto')
-        
         else:
-    
             print('\033[1;31m[-]\033[0m Unknown option')
-
-
     elif menu == 'about':
-    
         print('''
 -[MENU:About CryptoVenom]-
-
 CryptoVenom. The Cryptography Swiss Army Knife
-
 -[ Created By LockedByte ]-
-
 Public Key:
-
 -----BEGIN PGP PUBLIC KEY BLOCK-----
-
 mQGNBF2rm0wBDADQylilJzH2QgFC8Y9vF6IuT4LRVA+HlNkKQGM6hyLusZcbjggX
 ZCBX7ls7ghpsiJdUX9LdLOtVX45kAGy0RxjhshGyUF+FOOGyq2q0yQekKfBj8X55
 KviLqbpupuadcJP/Jxdsd6r4EhnUOcQZC1Cf0HBYX6Azg6TjDaSV2OKBmSO4dJk5
@@ -1072,30 +686,17 @@ njiwI/3ldFMPgP01tyZg4e+a8nYvrZVr3cDmiWzyDvI8m0P36NHZ4L0I8Gvl7ARC
 OFK4oKrrQy5fIqVo57U=
 =WVh5
 -----END PGP PUBLIC KEY BLOCK-----
-
-
-
 - [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ] -
 - [ CONTACT => @LockedByte (Twitter) ] -
-
 GPG:
-
         [ C3 3E 5A D8 C9 34 56 A1 E3 5C A3 8D 22 65 56 47 64 B5 A1 BC ]
    
-        
 ''')
-
-
     else:
-
         print('\033[1;31m[-]\033[0m Unknown error.')
         return 'err'
-
 def configSetup(CONFIG_FILEPATH):
-
     lang = input('\033[1;34m[=]\033[0m Your Lang [Eg.: EN]: ')
-
-    
     print('\033[1;34m[*]\033[0m Saving configuration in: ' + CONFIG_FILEPATH)
     config = 'LANG = ' + lang
     configfile = open(CONFIG_FILEPATH, 'w')
@@ -1103,39 +704,24 @@ def configSetup(CONFIG_FILEPATH):
     configfile.close()
     print('\033[1;32m[+]\033[0m Configuration applied successfully')
     time.sleep(4)
-    
 def checkConfig(CONFIG_FILEPATH):
-
     try:
-
         os.path.isfile(CONFIG_FILEPATH)
         return True
-    
     except:
-
         print('\033[1;33m[!]\033[0m Configuration file does not exists, running configuration setup')
-    
         return False
-        
-
 check = checkConfig(CONFIG_FILEPATH)
-
 if not check:
-
     while not check:
-    
         configSetup(CONFIG_FILEPATH)
         check = checkConfig(CONFIG_FILEPATH)
         os.system('clear')
-        
-
 banner(VERSION)
 ret = menu('main')
 menu(ret)
-    
 while True:
     input('\n\n\033[1;34m[*]\033[0m Continue to main? ')
     print('\n\n')
     ret = menu('main')
     menu(ret)
-

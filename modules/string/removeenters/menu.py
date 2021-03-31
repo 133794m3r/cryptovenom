@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
@@ -12,6 +11,7 @@
 #           << GNU PUBLIC LICENSE >>
 #
 #                               / CREATED BY LOCKEDBYTE /
+#                               / UPDATED/FIXED BY 133794M3R /
 #
 #                  [ CONTACT => alejandro.guerrero.rodriguez2@gmail.com ]
 #                  [ CONTACT => @LockedByte (Twitter) ]
@@ -21,36 +21,21 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
-
 from main import *
-
 method = input('\033[1;34m[=]\033[0m [F]ile Or [T]ext: ')
-
 if method == 'f' or method == 'F':
-
     m = 'file'
     inpath = input('\033[1;34m[=]\033[0m Input path: ')
-    
     string = open(inpath, 'r').read()
-    
     outpath = input('\033[1;34m[=]\033[0m Output path: ')
-
 elif method == 't' or method == 'T':
-
     m = 'text'
     string = input('\033[1;34m[=]\033[0m Text: ')
     inpath = ''
     outpath = ''
-
-
 else:
-
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()
-    
 out = removeenters(m, inpath, outpath, string)
-
 print('\033[1;32m[+]\033[0m Out = ' + str(out))
-
 print('\033[1;32m[+]\033[0m Enters removed successfully!')
-
