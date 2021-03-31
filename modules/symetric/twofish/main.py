@@ -21,6 +21,8 @@
 #
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 #
+from itertools import cycle
+
 from twofish import Twofish
 import base64
 import base58

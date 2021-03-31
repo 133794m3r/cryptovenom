@@ -103,7 +103,7 @@ elif opt == '3':
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
     dic = input('\033[1;34m[=]\033[0m Dictionary path: ')
-    bf(ct, dic) # REVISAR ESTO ----------------------------------------------------------------------------------
+   #bf\(ct\, dic) # REVISAR ESTO ----------------------------------------------------------------------------------
 else:
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()

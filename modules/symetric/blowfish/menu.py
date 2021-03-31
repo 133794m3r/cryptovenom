@@ -35,7 +35,7 @@ print('''
    2) Decrypt
    3) Brute Force
    
-'''
+''')
 opt = input('\033[1;34m[=]\033[0m Option: ')
 if opt == '1':
     opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
@@ -62,7 +62,7 @@ if opt == '1':
    3) Custom IV
    4) No IV
    
-   '''
+   ''')
     ivtype = input('\033[1;34m[=]\033[0m Option: ')
     if ivtype == '1':
         ivtype = 'randomstart'
@@ -152,7 +152,7 @@ elif opt == '3':
         print('\033[1;31m[-]\033[0m Unknown option')
         exit()
     dic = input('\033[1;34m[=]\033[0m Dictionary path: ')
-    bf(ct, dic) # REVISAR ESTO ----------------------------------------------------------------------------------
+   #bf\(ct\, dic) # REVISAR ESTO ----------------------------------------------------------------------------------
 else:
     print('\033[1;31m[-]\033[0m Unknown option')
     exit()
