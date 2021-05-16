@@ -84,6 +84,7 @@ def AutokeyCracker(ctext, q1gram, t1gram):
             score = qgram.score(pt)
             if score > bestscore:
                 bestkey = rec[i][1]
-                bestscore = score       
+                bestscore = score
+
         print('\033[1;34m[*]\033[0m Score = ' + str(bestscore) + ' ; Iteration = ' + str(KLEN) + ' ; Key = ' + bestkey + ' ; Out = ' + Autokey(bestkey).decipher(ctext))
 

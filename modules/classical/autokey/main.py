@@ -29,13 +29,16 @@ from pycipher import Autokey
 def text_to_bits(text, encoding='utf-8'):
     bits = bin(int(binascii.hexlify(text.encode(encoding)), 16))[2:]
     return bits.zfill(8 * ((len(bits) + 7) // 8))
+
 def text_from_bits(bits, encoding='utf-8'):
     n = int(bits, 2)
     return int2bytes(n).decode(encoding)
+
 def int2bytes(i):
     hex_string = '%x' % i
     n = len(hex_string)
     return binascii.unhexlify(hex_string.zfill(n + (n & 1)))
+
 def autokeyencode(importx, infilepath, outfilepath, inputformat, export, raw, key):
     if importx == 'file':
         f = open(infilepath, 'r')
@@ -81,6 +84,7 @@ def autokeyencode(importx, infilepath, outfilepath, inputformat, export, raw, ke
     else:
         print('\033[1;31m[-]\033[0m Unknown error.')
         return False
+
 def autokeydecode(importx, infilepath, outfilepath, outputformat, export, raw, key):
     if importx == 'file':
         f = open(infilepath, 'r')

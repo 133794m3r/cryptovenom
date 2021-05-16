@@ -33,6 +33,7 @@ print('''
    4) Brute Force
    
 ''')
+
 opt = input('\033[1;34m[=]\033[0m Option: ')
 if opt == '1':
     opt2 = input('\033[1;34m[=]\033[0m [F]ile or [T]ext: ')
